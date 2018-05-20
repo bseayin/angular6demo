@@ -1,0 +1,28 @@
+<h2>ngFor 指令Example</h2>
+<table class="table">
+  <caption>ngFor 指令Example</caption>
+  <thead>
+    <tr>
+      <th>产品</th>
+      <th>付款日期</th>
+      <th>状态</th></tr>
+  </thead>
+  <tbody>
+    <tr class="active">
+      <td>产品1</td>
+      <td>23/11/2013</td>
+      <td>待发货</td></tr>
+    <tr class="success">
+      <td>产品2</td>
+      <td>10/11/2013</td>
+      <td>发货中</td></tr>
+    <tr class="warning">
+      <td>产品3</td>
+      <td>20/10/2013</td>
+      <td>待确认</td></tr>
+    <tr *ngFor="let product of products" class="danger">
+      <td>{{product.id}}</td>
+      <td>{{product.title}}</td>
+      <td>{{product.name}}</td></tr>
+  </tbody>
+</table>
