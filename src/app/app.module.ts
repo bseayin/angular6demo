@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { ProductComponent } from './product/product.component';
     ProductComponent
   ],
   imports: [
-    BrowserModule,AlertModule.forRoot()
+    BrowserModule,AlertModule.forRoot(), AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
