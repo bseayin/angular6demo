@@ -9,6 +9,9 @@ import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { SubnavbarComponent } from './subnavbar/subnavbar.component';
+import { MembermgComponent } from './membermg/membermg.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { AppRoutingModule } from './/app-routing.module';
     FooterComponent,
     SearchComponent,
     CarouselComponent,
-    ProductComponent
+    ProductComponent,
+    SidenavComponent,
+    SubnavbarComponent,
+    MembermgComponent
   ],
   imports: [
     BrowserModule,AlertModule.forRoot(), AppRoutingModule
