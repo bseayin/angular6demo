@@ -12,6 +12,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { SubnavbarComponent } from './subnavbar/subnavbar.component';
 import { MembermgComponent } from './membermg/membermg.component';
+import { BasicsetComponent } from './basicset/basicset.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MembermgComponent } from './membermg/membermg.component';
     ProductComponent,
     SidenavComponent,
     SubnavbarComponent,
-    MembermgComponent
+    MembermgComponent,
+    BasicsetComponent
   ],
   imports: [
     BrowserModule,AlertModule.forRoot(), AppRoutingModule
