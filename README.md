@@ -18,6 +18,7 @@ This project was generated with [Angular CLI]  version 6.0.1+bootstrap4
  ### 效果图
   
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angulardemo1.png)
+   ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angulardemo2.png)
 
 
 
