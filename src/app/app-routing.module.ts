@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
+import { MembermgComponent } from './membermg/membermg.component';
+import { BasicsetComponent } from './basicset/basicset.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/basicset', pathMatch: 'full' },
   { path: 'heroes', component: ProductComponent },
+  { path: 'basicset', component: BasicsetComponent },
+  { path: 'memberset', component: MembermgComponent },
   { path: 'dashboard', component: CarouselComponent }
 ];
 
