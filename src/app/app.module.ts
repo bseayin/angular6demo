@@ -13,6 +13,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { SubnavbarComponent } from './subnavbar/subnavbar.component';
 import { MembermgComponent } from './membermg/membermg.component';
 import { BasicsetComponent } from './basicset/basicset.component';
+import { IndexmoduleComponent } from './indexmodule/indexmodule.component';
+import { SetingmoduleComponent } from './setingmodule/setingmodule.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { BasicsetComponent } from './basicset/basicset.component';
     SidenavComponent,
     SubnavbarComponent,
     MembermgComponent,
-    BasicsetComponent
+    BasicsetComponent,
+    IndexmoduleComponent,
+    SetingmoduleComponent
   ],
   imports: [
     BrowserModule,AlertModule.forRoot(), AppRoutingModule
