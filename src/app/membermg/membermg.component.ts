@@ -21,6 +21,9 @@ export class MembermgComponent implements OnInit {
 
     ]
   }
+  updateMember(){
+    console.log(33);
+   }
 
 }
 export class member{
@@ -33,7 +36,5 @@ export class member{
     public character:string,
     public identify:string
   ) { }
-  updateMember(){
-   console.log(33);
-  }
+ 
 }
