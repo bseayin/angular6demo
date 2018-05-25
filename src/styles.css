@@ -7,3 +7,12 @@
 .botCenter{
     width:100%; height:35px; line-height:35px; background:#ccc; position:fixed; bottom:0px; left:0px; font-size:14px; color:#000; text-align:center;
 }
+a.change{
+    color:#007bff !important;
+    cursor: pointer;;
+}
+a:hover{
+    color:#0056b3 ;
+}
+
+
