@@ -15,6 +15,8 @@ import { MembermgComponent } from './membermg/membermg.component';
 import { BasicsetComponent } from './basicset/basicset.component';
 import { IndexmoduleComponent } from './indexmodule/indexmodule.component';
 import { SetingmoduleComponent } from './setingmodule/setingmodule.component';
+import { ProjectmgComponent } from './projectmg/projectmg.component';
+import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { SetingmoduleComponent } from './setingmodule/setingmodule.component';
     MembermgComponent,
     BasicsetComponent,
     IndexmoduleComponent,
-    SetingmoduleComponent
+    SetingmoduleComponent,
+    ProjectmgComponent,
+    FuncdocmgComponent
   ],
   imports: [
     BrowserModule,AlertModule.forRoot(), AppRoutingModule
