@@ -9,7 +9,7 @@ import { IndexmoduleComponent } from './indexmodule/indexmodule.component';
 import { SetingmoduleComponent } from './setingmodule/setingmodule.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
-  { path: '', redirectTo: '/basicset', pathMatch: 'full' },
+  { path: '', redirectTo: '/setingmodule', pathMatch: 'full' },
   { path: 'heroes', component: ProductComponent },
 
 
