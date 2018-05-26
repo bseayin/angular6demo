@@ -19,6 +19,7 @@ import { TeamfilesComponent } from './teamfiles/teamfiles.component';
 import { DiscussmoduleComponent } from './discussmodule/discussmodule.component';
 import { ProjectmgComponent } from './projectmg/projectmg.component';
 import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
+import { ResumeComponent } from './resume/resume.component';
 
 
 
@@ -39,7 +40,8 @@ import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
     TeamfilesComponent,
     DiscussmoduleComponent,
     ProjectmgComponent,
-    FuncdocmgComponent
+    FuncdocmgComponent,
+    ResumeComponent
  
   ],
   imports: [
