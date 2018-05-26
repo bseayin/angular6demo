@@ -1,81 +1,160 @@
 <div>
-  <h2>项目</h2> <span style="position: absolute;left:250px;bottom:275px">项目周期:</span><span style="position:absolute;left:250px;bottom:250px">项目等级:</span><span style="position:absolute;left:250px;bottom:225px">项目冲刺阶段:</span>
-  <input type="button" value="修改" style="position:inline" data-toggle="modal" data-target="#pro_info_revise">&nbsp;&nbsp;&nbsp;
-  <input type="button" value="添加功能点" style="position:inline" data-toggle="modal" data-target="#func_point_add">
-</div>
-<div style="position:relative;top:2em">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">功能点</th>
-        <th scope="col">优先级</th>
-        <th scope="col">预计人/天</th>
-        <th scope="col">修改</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">功能点1</th>
-        <td>紧急</td>
-        <td>999</td>
-        <td><input type="button" value="修改"></td>
-      </tr>
-      <tr>
-        <th scope="row">功能点2</th>
-        <td>普通</td>
-        <td>999</td>
-        <td><input type="button" value="修改"></td>
-      </tr>
-      <tr>
-        <th scope="row">功能点3</th>
-        <td>严重</td>
-        <td>3211231234567</td>
-        <td><input type="button" value="修改"></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="modal fade" id="pro_info_revise" tabindex="-1" role="dialog" aria-labelledby="pro_info_reviseLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="pro_info_reviseLabel">项目信息修改</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        项目周期: <input type="text"><br/>
-        项目等级: <input type="text"><br/>
-        冲刺阶段: <input type="text">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+    <h2>项目</h2> <span style="position: absolute;left:250px;bottom:275px">项目周期:</span><span style="position:absolute;left:250px;bottom:250px">项目等级:</span><span style="position:absolute;left:250px;bottom:225px">项目冲刺阶段:</span>
+    <input type="button" value="修改" style="position:inline" data-toggle="modal" data-target="#pro_info_revise">&nbsp;&nbsp;&nbsp;
+    <input type="button" value="添加功能点" style="position:inline" data-toggle="modal" data-target="#func_point_add">
+  </div>
+  <div style="position:relative;top:2em">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">功能点</th>
+          <th scope="col">优先级</th>
+          <th scope="col">预计人/天</th>
+          <th scope="col">修改</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">功能点1</th>
+          <td>紧急</td>
+          <td>999</td>
+          <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              发布
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">功能点2</th>
+          <td>普通</td>
+          <td>999</td>
+          <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              发布
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">功能点3</th>
+          <td>严重</td>
+          <td>3211231234567</td>
+          <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              发布
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!--发布模态框开始-->
+  <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">功能点发布</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="needpersonDJW">预计人数</span>
+            </div>
+            <input type="text" class="form-control" placeholder="工作需要人数" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="workDJW">总工作量</span>
+            </div>
+            <input type="text" class="form-control" placeholder="总工作天数" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="startDJW">开始时间</span>
+            </div>
+            <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="endDJW">结束时间</span>
+            </div>
+            <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="关键词1" aria-label="Username" aria-describedby="basic-addon1" >
+              </div>
+              <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="关键词2" aria-label="Username" aria-describedby="basic-addon1" >
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" placeholder="关键词3" aria-label="Username" aria-describedby="basic-addon1" >
+                  </div> 
+                  <div class="col-md-3">
+                      <button type="button" class="btn btn-info" (click)="findResume()">关键词搜索</button>
+                  </div> 
+                  <nav class="navbar navbar-light bg-light">
+                      <form class="form-inline">
+                        <input class="form-control mr-lg" type="search" placeholder="搜索人名进行简历检索" aria-label="Search" style="width:600px">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="button">搜索</button>
+                      </form>
+                    </nav>         
+          </div>
+          <app-resume  ng-hide="resumeModal"></app-resume>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">提交并保存 </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="modal fade" id="func_point_add" tabindex="-1" role="dialog" aria-labelledby="func_point_addLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="func_point_addLabel">项目信息修改</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        功能点名:<input type="text" style="width:200px"><br/>
-        优先级:&nbsp;&nbsp;&nbsp;<select style="width:200px;position: relative;left:3px"><option>普通</option><option>紧急</option><option>严重</option></select><br/>
-        预计人天:<input type="number" value="0"  style="width:200px">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+  <!--发布模态框结束-->
+  
+  <div class="modal fade" id="pro_info_revise" tabindex="-1" role="dialog" aria-labelledby="pro_info_reviseLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pro_info_reviseLabel">项目信息修改</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          项目周期: <input type="text"><br/>
+          项目等级: <input type="text"><br/>
+          冲刺阶段: <input type="text">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  
+  <div class="modal fade" id="func_point_add" tabindex="-1" role="dialog" aria-labelledby="func_point_addLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="func_point_addLabel">项目信息修改</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          功能点名:<input type="text" style="width:200px"><br/>
+          优先级:&nbsp;&nbsp;&nbsp;<select style="width:200px;position: relative;left:3px"><option>普通</option><option>紧急</option><option>严重</option></select><br/>
+          预计人天:<input type="number" value="0"  style="width:200px">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+        </div>
+      </div>
+    </div>
+  </div>
