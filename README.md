@@ -14,6 +14,7 @@ This project was generated with [Angular CLI]  version 6.0.1+bootstrap4
  ### <br>6.angular6 ngFor+bootstrap table example
  ### <br>7.angular6 router 路由 example
  ###  知识点
+   脑图地址： http://naotu.baidu.com/file/3fc4186932118195edf5532f7e873799?token=55ced4d4d2f377ea
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angular6.png)
  ### 效果图
   
