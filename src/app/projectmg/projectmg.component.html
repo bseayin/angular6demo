@@ -103,7 +103,7 @@
                       </form>
                     </nav>         
           </div>
-          <app-resume  ng-hide="resumeModal"></app-resume>
+          <app-resume *ngIf="selectResume"></app-resume>
         
         </div>
         <div class="modal-footer">

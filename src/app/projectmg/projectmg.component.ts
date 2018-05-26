@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class ProjectmgComponent implements OnInit {
 
   constructor() { }
-
+private selectResume=false;
   ngOnInit() {
   }
   findResume(){
-    alert("恭喜发财");
+   this. selectResume=true;
       }
 }
