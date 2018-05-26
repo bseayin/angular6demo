@@ -3,55 +3,35 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">成员名称</th>
+        <th scope="col">真实姓名</th>
+        <th scope="col">邮箱</th>
+        <th scope="col">电话</th>
+        <th scope="col">角色</th>
+        <th scope="col">身份</th>
+        <th scope="col">操作</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+      
       <tr *ngFor="let member of members" class="danger">
-        <td>{{member.id}}</td>
-        <td>{{member.name}}</td>
-        <td>{{member.realname}}</td>
-        <td>{{member.memberemail}}</td>
-        <td>{{member.phonenumber}}</td>
-        <td>{{member.character}}</td>
-        <td>{{member.identify}}</td>
-        <td><button type="button" class="btn btn-link" (click)="updateMember(member)">修改</button><a href="#">删除</a></td>
-        <td hidden="hidden">{{member.id}}</td>
-        <td hidden="hidden">{{member.name}}</td>
-        <td hidden="var2"><input type="text"></td>
-        <td hidden="hidden"><input type="text"></td>
-        <td hidden="hidden"><input type="text"></td>
-        <td hidden="hidden"><input type="text"></td>
-        <td hidden="hidden">{{member.identify}}</td>
-        <td hidden="hidden"><button type="button" class="btn btn-link" (click)="updateMember(this)">修改</button><a href="#">删除</a></td>
+        <td *ngIf="true">{{member.id}}</td>
+        <td *ngIf="true">{{member.name}}</td>
+        <td *ngIf="true">{{member.realname}}</td>
+        <td *ngIf="true">{{member.memberemail}}</td>
+        <td *ngIf="true">{{member.phonenumber}}</td>
+        <td *ngIf="true">{{member.character}}</td>
+        <td *ngIf="true">{{member.identify}}</td>
+        <td *ngIf="true"><button type="button" class="btn btn-link" (click)="updateMember(member)">修改</button><a href="#">删除</a></td>
+        <td *ngIf="false">{{member.id}}</td>
+        <td *ngIf="false">{{member.name}}</td>
+        <td *ngIf="false"><input type="text"></td>
+        <td *ngIf="false"><input type="text"></td>
+        <td *ngIf="false"><input type="text"></td>
+        <td *ngIf="false"><input type="text"></td>
+        <td *ngIf="false">{{member.identify}}</td>
+        <td *ngIf="false"><button type="button" class="btn btn-link" (click)="updateMember(this)">修改</button><a href="#">删除</a></td>
       </tr>
     </tbody>
   </table>
 </div>
-constructor(
-  public id:number,
-  public name:string,
-  public realname: string,
-  public memberemail:string,
-  public phonenumber:string,
-  public character:string,
-  public identify:string
