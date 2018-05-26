@@ -7,6 +7,8 @@ import { MembermgComponent } from './membermg/membermg.component';
 import { BasicsetComponent } from './basicset/basicset.component';
 import { IndexmoduleComponent } from './indexmodule/indexmodule.component';
 import { SetingmoduleComponent } from './setingmodule/setingmodule.component';
+import { TeamfilesComponent } from './teamfiles/teamfiles.component';
+import { DiscussmoduleComponent } from './discussmodule/discussmodule.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
   { path: '', redirectTo: '/setingmodule', pathMatch: 'full' },
@@ -14,9 +16,11 @@ const routes: Routes = [
 
 
   { path: 'indexmodule', component: IndexmoduleComponent },
+  { path: 'discussmodule', component: DiscussmoduleComponent },
   { path: 'setingmodule', component: SetingmoduleComponent,children:[
     { path: '', component: BasicsetComponent },
     { path: 'basicset', component: BasicsetComponent },
+    { path: 'teamfilesset', component: TeamfilesComponent },
     { path: 'memberset', component: MembermgComponent }
   ] },
   { path: 'dashboard', component: CarouselComponent }
