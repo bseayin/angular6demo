@@ -22,7 +22,15 @@
         <td>{{member.phonenumber}}</td>
         <td>{{member.character}}</td>
         <td>{{member.identify}}</td>
-        <td><button type="button" class="btn btn-link" (click)="updateMember()">修改</button><a href="#">删除</a></td>
+        <td><button type="button" class="btn btn-link" (click)="updateMember(member)">修改</button><a href="#">删除</a></td>
+        <td hidden="hidden">{{member.id}}</td>
+        <td hidden="hidden">{{member.name}}</td>
+        <td hidden="var2"><input type="text"></td>
+        <td hidden="hidden"><input type="text"></td>
+        <td hidden="hidden"><input type="text"></td>
+        <td hidden="hidden"><input type="text"></td>
+        <td hidden="hidden">{{member.identify}}</td>
+        <td hidden="hidden"><button type="button" class="btn btn-link" (click)="updateMember(this)">修改</button><a href="#">删除</a></td>
       </tr>
     </tbody>
   </table>

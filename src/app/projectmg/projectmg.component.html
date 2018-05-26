@@ -18,23 +18,102 @@
         <th scope="row">功能点1</th>
         <td>紧急</td>
         <td>999</td>
-        <td><input type="button" value="修改"></td>
+        <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            发布
+          </button>
+        </td>
       </tr>
       <tr>
         <th scope="row">功能点2</th>
         <td>普通</td>
         <td>999</td>
-        <td><input type="button" value="修改"></td>
+        <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            发布
+          </button>
+        </td>
       </tr>
       <tr>
         <th scope="row">功能点3</th>
         <td>严重</td>
         <td>3211231234567</td>
-        <td><input type="button" value="修改"></td>
+        <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            发布
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<!--发布模态框开始-->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">功能点发布</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="needpersonDJW">预计人数</span>
+          </div>
+          <input type="text" class="form-control" placeholder="工作需要人数" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="workDJW">总工作量</span>
+          </div>
+          <input type="text" class="form-control" placeholder="总工作天数" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="startDJW">开始时间</span>
+          </div>
+          <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="endDJW">结束时间</span>
+          </div>
+          <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="关键词1" aria-label="Username" aria-describedby="basic-addon1" >
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="关键词2" aria-label="Username" aria-describedby="basic-addon1" >
+              </div>
+              <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="关键词3" aria-label="Username" aria-describedby="basic-addon1" >
+                </div> 
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-info" (click)="findResume()">关键词搜索</button>
+                </div> 
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                      <input class="form-control mr-lg" type="search" placeholder="搜索人名进行简历检索" aria-label="Search" style="width:600px">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="button">搜索</button>
+                    </form>
+                  </nav>         
+        </div>
+        <app-resume  ng-hide="resumeModal"></app-resume>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">提交并保存 </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--发布模态框结束-->
 
 <div class="modal fade" id="pro_info_revise" tabindex="-1" role="dialog" aria-labelledby="pro_info_reviseLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
