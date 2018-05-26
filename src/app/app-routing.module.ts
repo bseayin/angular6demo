@@ -17,15 +17,12 @@ const routes: Routes = [
   { path: 'heroes', component: ProductComponent },
   { path: 'indexmodule', component: IndexmoduleComponent },
   { path: 'discussmodule', component: DiscussmoduleComponent },
-  { path: 'setingmodule', component: SetingmoduleComponent,children:[
-    { path: '', component: BasicsetComponent },
-    { path: 'basicset', component: BasicsetComponent },
-    { path: 'teamfilesset', component: TeamfilesComponent },
   { path: 'funcdocmg', component: FuncdocmgComponent },  
   { path: 'setingmodule', component: SetingmoduleComponent,children:[
     { path: '', component: BasicsetComponent },
     { path: 'basicset', component: BasicsetComponent },
     { path: 'projectmg', component: ProjectmgComponent },
+    { path: 'teamfilesset', component: TeamfilesComponent },
     { path: 'memberset', component: MembermgComponent }
   ] },
   { path: 'dashboard', component: CarouselComponent }
