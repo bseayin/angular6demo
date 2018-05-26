@@ -15,14 +15,11 @@ import { MembermgComponent } from './membermg/membermg.component';
 import { BasicsetComponent } from './basicset/basicset.component';
 import { IndexmoduleComponent } from './indexmodule/indexmodule.component';
 import { SetingmoduleComponent } from './setingmodule/setingmodule.component';
-<<<<<<< HEAD
 import { TeamfilesComponent } from './teamfiles/teamfiles.component';
 import { DiscussmoduleComponent } from './discussmodule/discussmodule.component';
-=======
 import { ProjectmgComponent } from './projectmg/projectmg.component';
 import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
 import { ResumeComponent } from './resume/resume.component';
->>>>>>> 95bb5eaf9799966d5cb2f2e24d32598a3a041b6b
 
 
 @NgModule({
@@ -39,14 +36,11 @@ import { ResumeComponent } from './resume/resume.component';
     BasicsetComponent,
     IndexmoduleComponent,
     SetingmoduleComponent,
-<<<<<<< HEAD
     TeamfilesComponent,
     DiscussmoduleComponent
-=======
     ProjectmgComponent,
     FuncdocmgComponent,
     ResumeComponent
->>>>>>> 95bb5eaf9799966d5cb2f2e24d32598a3a041b6b
   ],
   imports: [
     BrowserModule,AlertModule.forRoot(), AppRoutingModule
