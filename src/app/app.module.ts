@@ -19,7 +19,7 @@ import { TeamfilesComponent } from './teamfiles/teamfiles.component';
 import { DiscussmoduleComponent } from './discussmodule/discussmodule.component';
 import { ProjectmgComponent } from './projectmg/projectmg.component';
 import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
-import { ResumeComponent } from './resume/resume.component';
+
 
 
 @NgModule({
@@ -37,10 +37,10 @@ import { ResumeComponent } from './resume/resume.component';
     IndexmoduleComponent,
     SetingmoduleComponent,
     TeamfilesComponent,
-    DiscussmoduleComponent
+    DiscussmoduleComponent,
     ProjectmgComponent,
-    FuncdocmgComponent,
-    ResumeComponent
+    FuncdocmgComponent
+ 
   ],
   imports: [
     BrowserModule,AlertModule.forRoot(), AppRoutingModule
