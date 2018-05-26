@@ -17,6 +17,7 @@ import { IndexmoduleComponent } from './indexmodule/indexmodule.component';
 import { SetingmoduleComponent } from './setingmodule/setingmodule.component';
 import { ProjectmgComponent } from './projectmg/projectmg.component';
 import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
+import { ResumeComponent } from './resume/resume.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
     IndexmoduleComponent,
     SetingmoduleComponent,
     ProjectmgComponent,
-    FuncdocmgComponent
+    FuncdocmgComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,AlertModule.forRoot(), AppRoutingModule
