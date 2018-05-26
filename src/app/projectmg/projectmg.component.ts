@@ -11,5 +11,8 @@ export class ProjectmgComponent implements OnInit {
 
   ngOnInit() {
   }
+   findResume(){
+alert("恭喜发财");
+  }
 
 }
