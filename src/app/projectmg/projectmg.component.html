@@ -14,30 +14,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">功能点1</th>
-          <td>紧急</td>
-          <td>999</td>
-          <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              发布
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">功能点2</th>
-          <td>普通</td>
-          <td>999</td>
-          <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              发布
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">功能点3</th>
-          <td>严重</td>
-          <td>3211231234567</td>
+         <tr *ngFor="let funcpoint of funcpoints; index as i;" class="danger">
+          <th scope="row">{{funcpoint.name}}</th>
+          <td>{{funcpoint.priority}}</td>
+          <td>{{funcpoint.during}}</td>
           <td><input type="button" value="修改">&nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
               发布
