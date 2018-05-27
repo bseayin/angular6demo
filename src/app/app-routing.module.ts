@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'funcdocmg', component: FuncdocmgComponent }, 
   { path: 'task', component:TaskComponent,children:[
       {path: 'tasklist',component: TasklistComponent},
+      {path: '',component: TasklistComponent},
   ]} ,
   { path: 'setingmodule', component: SetingmoduleComponent,children:[
     { path: '', component: BasicsetComponent },
