@@ -24,6 +24,7 @@ import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
 import { ResumeComponent } from './resume/resume.component';
 import { TasklistComponent } from './tasklist/tasklist.component';
 import { TaskComponent } from './task/task.component';
+import { Binddemo1Component } from './binddemo1/binddemo1.component';
 
 
 
@@ -47,7 +48,8 @@ import { TaskComponent } from './task/task.component';
     FuncdocmgComponent,
     ResumeComponent,
     TasklistComponent,
-    TaskComponent
+    TaskComponent,
+    Binddemo1Component
  
   ],
   imports: [

@@ -1,0 +1,51 @@
+<div>
+    <br>属性绑定
+  <img [src]="img1" class="img-rounded">
+  <br>事件绑定
+  <button (click)="changeImg()" >改变图片</button>
+
+
+  <input type="text" [value]="tt">{{tt}}
+
+  <input type="text" (input)="onInput($event)">
+
+<br>数据双向绑定 自己实现
+  <input type="text" (input)="onInput2($event)" [value]="tt2">{{tt2}}
+
+  <br>数据双向绑定 官方提供
+<input type="text" [(ngModel)]="tt3">{{tt3}}
+</div>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">成员名称</th>
+        <th scope="col">真实姓名</th>
+        <th scope="col">邮箱</th>
+        <th scope="col">电话</th>
+        <th scope="col">角色</th>
+        <th scope="col">身份</th>
+        <th scope="col">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let member of members; index as i;" class="danger">
+        <td>{{member.id}}</td>
+        <td>{{member.name}}</td>
+        <td>{{member.realname}}</td>
+        <td *ngIf="!member.isUpdateModel">{{member.memberemail}}</td>
+        <td *ngIf="member.isUpdateModel"><input type="text" name="memberemail"  [(ngModel)]="member.memberemail" ></td>
+        <td *ngIf="!member.isUpdateModel">{{member.phonenumber}}</td>
+        <td *ngIf="member.isUpdateModel"><input type="text" value="{{member.phonenumber}}" [(ngModel)]="member.phonenumber"></td>
+        <td *ngIf="!member.isUpdateModel">{{member.character}}</td>
+        <td *ngIf="member.isUpdateModel"><input type="text" value="{{member.character}}" [(ngModel)]="member.character"></td>
+        <td *ngIf="!member.isUpdateModel">{{member.identify}}</td>
+        <td *ngIf="member.isUpdateModel"><input type="text" value="{{member.identify}}" [(ngModel)]="member.identify"></td>
+        <td *ngIf="!member.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateMember(i)">修改</button><button type="button" class="btn btn-link" (click)="deleteMember(i)">删除</button></td>
+        <td *ngIf="member.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrimMember(i)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdateMember(i)">取消</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
