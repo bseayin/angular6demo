@@ -20,6 +20,7 @@ import { DiscussmoduleComponent } from './discussmodule/discussmodule.component'
 import { ProjectmgComponent } from './projectmg/projectmg.component';
 import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
 import { ResumeComponent } from './resume/resume.component';
+import { Httpdemo1Component } from './httpdemo1/httpdemo1.component';
 
 
 
@@ -41,7 +42,8 @@ import { ResumeComponent } from './resume/resume.component';
     DiscussmoduleComponent,
     ProjectmgComponent,
     FuncdocmgComponent,
-    ResumeComponent
+    ResumeComponent,
+    Httpdemo1Component
  
   ],
   imports: [
