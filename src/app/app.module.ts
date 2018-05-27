@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -20,6 +21,8 @@ import { DiscussmoduleComponent } from './discussmodule/discussmodule.component'
 import { ProjectmgComponent } from './projectmg/projectmg.component';
 import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
 import { ResumeComponent } from './resume/resume.component';
+import { TasklistComponent } from './tasklist/tasklist.component';
+import { TaskComponent } from './task/task.component';
 
 
 
@@ -41,11 +44,13 @@ import { ResumeComponent } from './resume/resume.component';
     DiscussmoduleComponent,
     ProjectmgComponent,
     FuncdocmgComponent,
-    ResumeComponent
+    ResumeComponent,
+    TasklistComponent,
+    TaskComponent
  
   ],
   imports: [
-    BrowserModule,AlertModule.forRoot(), AppRoutingModule
+    BrowserModule,AlertModule.forRoot(), AppRoutingModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
