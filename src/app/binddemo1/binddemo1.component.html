@@ -1,8 +1,17 @@
 <div>
     <br>属性绑定
   <img [src]="img1" class="img-rounded">
+
+  <div id="list-example" class="list-group">
+      <a [class]="itemClass1"  (click)="clickItem('A')">Item 1</a>
+      <a [class]="itemClass2"  (click)="clickItem('B')">Item2</a>
+      <a [class]="itemClass3"  (click)="clickItem('C')">Item3</a>
+    </div>
+
   <br>事件绑定
   <button (click)="changeImg()" >改变图片</button>
+
+  
 
 
   <input type="text" [value]="tt">{{tt}}

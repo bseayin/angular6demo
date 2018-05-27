@@ -10,6 +10,13 @@ export class Binddemo1Component implements OnInit {
   tt="初始值";
   tt2="初始值";
   tt3="初始值";
+  isA=true;
+  isB=true;
+  itemClass1="list-group-item list-group-item-action";
+  itemClass2="list-group-item list-group-item-action";
+  itemClass3="list-group-item list-group-item-action";
+  itemClass4="list-group-item list-group-item-action";
+  itemClass5="list-group-item list-group-item-action";
 
   private members:Array<member>;
   constructor() { }
@@ -23,7 +30,25 @@ export class Binddemo1Component implements OnInit {
     ]
     
   }
-
+  clickItem(item:any){
+    this.itemClass1="list-group-item list-group-item-action";
+    this.itemClass2="list-group-item list-group-item-action";
+    this.itemClass3="list-group-item list-group-item-action";
+    this.itemClass4="list-group-item list-group-item-action";
+    this.itemClass5="list-group-item list-group-item-action";
+if("A"==item){
+  this.itemClass1="list-group-item list-group-item-action active";
+}
+if("B"==item){
+  this.itemClass2="list-group-item list-group-item-action active";
+}
+if("C"==item){
+  this.itemClass3="list-group-item list-group-item-action active";
+}
+if("D"==item){
+  this.itemClass4="list-group-item list-group-item-action active";
+}
+  }
 changeImg(){
   this.img1="http://placekitten.com/600/600";
  }
