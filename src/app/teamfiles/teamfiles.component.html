@@ -1,24 +1,40 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">冲刺名称</th>
-      <th scope="col">所属项目</th>
+      <th scope="col">项目名称</th>
       <th scope="col">开始时间</th>
       <th scope="col">结束时间</th>
       <th scope="col">冲刺内容</th>
       <th scope="col">状态</th>
+      <th scope="col">管理</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>界面冲刺</td>
       <td>天工开物</td>
       <td>2018-5-20</td>
       <td>2018-6-25</td>
       <td>  <a href="#"  data-toggle="modal" data-target="#myModal">查看详情</a></td>
       <td>未开始</td>
-
+      <td> 
+        <a href="#">修改</a>&nbsp;
+        <a href="#">删除</a>
     </tr>
+    <tr>
+        <td><input type="email" class="form-control" id="inputEmail4" placeholder=""></td>
+        <td><input type="date" class="form-control" id="inputEmail4" placeholder=""></td>
+        <td><input type="date" class="form-control" id="inputEmail4" placeholder=""></td>
+        <td>  <a href="#"  data-toggle="modal" data-target="#myModal">查看详情</a></td>
+        <td><select id="inputState" class="form-control">
+            <option>未开始</option>
+            <option>进行中</option>
+            <option>已完成</option>
+          </select>
+        </td>
+        <td> 
+          <a href="#">确定</a>&nbsp;
+          <a href="#">取消</a>
+      </tr>
   </tbody>
 </table>
 

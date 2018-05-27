@@ -11,14 +11,12 @@ import { TeamfilesComponent } from './teamfiles/teamfiles.component';
 import { DiscussmoduleComponent } from './discussmodule/discussmodule.component';
 import { ProjectmgComponent } from './projectmg/projectmg.component';
 import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
-import { TaskmoduleComponent } from './taskmodule/taskmodule.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
   { path: '', redirectTo: '/setingmodule', pathMatch: 'full' },
   { path: 'heroes', component: ProductComponent },
   { path: 'indexmodule', component: IndexmoduleComponent },
   { path: 'discussmodule', component: DiscussmoduleComponent },
-  { path: 'taskmodule', component: TaskmoduleComponent },
   { path: 'funcdocmg', component: FuncdocmgComponent },  
   { path: 'setingmodule', component: SetingmoduleComponent,children:[
     { path: '', component: BasicsetComponent },

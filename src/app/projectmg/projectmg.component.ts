@@ -6,28 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projectmg.component.css']
 })
 export class ProjectmgComponent implements OnInit {
-  private funcpoints:Array<funcpoint>;
-  constructor() { }
-  isUpdateTR=1;
 
+  constructor() { }
 private selectResume=false;
   ngOnInit() {
-    this.funcpoints=[
-      new funcpoint("功能点1","普通",545,false),
-      new funcpoint("功能点2","紧急",452,false),
-      new funcpoint("功能点3","严重",319,false),
-    ]
   }
   findResume(){
    this. selectResume=true;
       }
-    }
-  export class funcpoint{
-  constructor(
-    public name:string,
-    public priority: string,
-    public during: number,
-    public isUpdateModel:boolean
-  ) { }  
 }
-
