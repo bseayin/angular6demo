@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-membermg',
   templateUrl: './membermg.component.html',
@@ -8,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class MembermgComponent implements OnInit {
   private members:Array<member>;
   constructor() { }
-  isUpdateTR=1; 
+
 
   ngOnInit() {
     this.members=[
@@ -28,9 +27,8 @@ export class MembermgComponent implements OnInit {
   deleteMember(i){
     this.members.splice(i,1);
   }
-  updateConfrimMember(m:member){
-    console.log("updateConfrimMember--i="+m.name)
-    console.log(m)
+  updateConfrimMember(i){ 
+    this.members[i].isUpdateModel=false;
   }
 }
 export class member{
