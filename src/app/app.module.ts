@@ -42,7 +42,7 @@ import { Httpdemo1Component } from './httpdemo1/httpdemo1.component';
     DiscussmoduleComponent,
     ProjectmgComponent,
     FuncdocmgComponent,
-    ResumeComponent,
+    ResumeComponent, 
     Httpdemo1Component
  
   ],
