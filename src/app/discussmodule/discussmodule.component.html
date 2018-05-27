@@ -1,9 +1,9 @@
 <table class="table">
     <thead class="thead-light">
       <tr>
+        <th scope="col">ID</th>
         <th scope="col">任务名称</th>
         <th scope="col">所属功能点</th>
-        <th scope="col">项目组长</th>
         <th scope="col">任务开始时间</th>
         <th scope="col">任务结束时间</th>
         <th scope="col">任务状态</th>
@@ -13,18 +13,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>画界面</td>
-        <td>天工开物</td>
-        <td>阿毛</td>
-        <td>2018-5-20</td>
-        <td>2018-6-25</td>
-        <td>未开始</td>
-        <td>  <a href="#"  data-toggle="modal" data-target="#myModal">查看详情</a></td>
-        <td>未通过</td>
-        <td> 
-          <a href="#">修改</a>&nbsp;
-          <a href="#">删除</a>
+      <tr *ngFor="let demandconfirm of demandconfirms;index as i">
+        <td>{{demandconfirm.id}}</td>
+        <td>{{demandconfirm.taskName}}</td>
+        <td>{{demandconfirm.functionPoint}}</td>
+        <td>{{demandconfirm.startTime}}</td>
+        <td>{{demandconfirm.endTime}}</td>
+        <td *ngIf="!demandconfirm.isUpdateModel">{{demandconfirm.taskStatus}}</td>
+        <td *ngIf="demandconfirm.isUpdateModel"><input type="text" name="taskStatus"  [(value)]="demandconfirm.taskStatus" ></td>
+        <td>  <a href="#"  data-toggle="modal" data-target="#myModal" (click)="showcontent(demandconfirm)">查看详情</a></td>
+        <td *ngIf="!demandconfirm.isUpdateModel">{{demandconfirm.isPass}}</td>
+        <td *ngIf="demandconfirm.isUpdateModel"><input type="text" name="isPass"  [(value)]="demandconfirm.isPass" ></td>
+        <td *ngIf="!demandconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="update(i)">修改</button><button type="button" class="btn btn-link" (click)="delete(i)">删除</button></td>
+        <td *ngIf="demandconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrim(member)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdate(i)">取消</button></td>
       </tr>
     </tbody>
   </table>
@@ -42,7 +43,7 @@
             </div>     
             <!-- 模态框主体 -->
             <div class="modal-body">
-              需求确认内容..
+                {{content}}
             </div>    
             <!-- 模态框底部 -->
             <div class="modal-footer">

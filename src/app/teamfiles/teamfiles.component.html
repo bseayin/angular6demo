@@ -1,6 +1,7 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
+      <th scope="col">ID</th>
       <th scope="col">冲刺名称</th>
       <th scope="col">所属项目</th>
       <th scope="col">开始时间</th>
@@ -10,14 +11,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>界面冲刺</td>
-      <td>天工开物</td>
-      <td>2018-5-20</td>
-      <td>2018-6-25</td>
-      <td>  <a href="#"  data-toggle="modal" data-target="#myModal">查看详情</a></td>
-      <td>未开始</td>
-
+    <tr *ngFor="let splitplan of splitplans;index as i">
+      <td>{{splitplan.id}}</td>
+      <td>{{splitplan.splitName}}</td>
+      <td>{{splitplan.projectName}}</td>
+      <td>{{splitplan.startTime}}</td>
+      <td>{{splitplan.endTime}}</td>
+      <td>  <a href="#"  data-toggle="modal" data-target="#myModal" (click)="showcontent(splitplan)">查看详情</a></td>
+      <td>{{splitplan.status}}</td>
     </tr>
   </tbody>
 </table>
@@ -35,7 +36,7 @@
           </div>     
           <!-- 模态框主体 -->
           <div class="modal-body">
-            冲刺计划内容..
+             {{content}}
           </div>    
           <!-- 模态框底部 -->
           <div class="modal-footer">
