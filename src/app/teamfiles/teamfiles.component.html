@@ -1,64 +1,47 @@
 <table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">项目名称</th>
-      <th scope="col">开始时间</th>
-      <th scope="col">结束时间</th>
-      <th scope="col">冲刺内容</th>
-      <th scope="col">状态</th>
-      <th scope="col">管理</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>天工开物</td>
-      <td>2018-5-20</td>
-      <td>2018-6-25</td>
-      <td>  <a href="#"  data-toggle="modal" data-target="#myModal">查看详情</a></td>
-      <td>未开始</td>
-      <td> 
-        <a href="#">修改</a>&nbsp;
-        <a href="#">删除</a>
-    </tr>
-    <tr>
-        <td><input type="email" class="form-control" id="inputEmail4" placeholder=""></td>
-        <td><input type="date" class="form-control" id="inputEmail4" placeholder=""></td>
-        <td><input type="date" class="form-control" id="inputEmail4" placeholder=""></td>
-        <td>  <a href="#"  data-toggle="modal" data-target="#myModal">查看详情</a></td>
-        <td><select id="inputState" class="form-control">
-            <option>未开始</option>
-            <option>进行中</option>
-            <option>已完成</option>
-          </select>
-        </td>
-        <td> 
-          <a href="#">确定</a>&nbsp;
-          <a href="#">取消</a>
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">冲刺名称</th>
+        <th scope="col">所属项目</th>
+        <th scope="col">开始时间</th>
+        <th scope="col">结束时间</th>
+        <th scope="col">冲刺内容</th>
+        <th scope="col">状态</th>
       </tr>
-  </tbody>
-</table>
-
-
-
-   <!-- 查看冲刺内容的模态框 -->
-   <div class="modal fade" id="myModal">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <!-- 模态框头部 -->
-          <div class="modal-header">
-            <h4 class="modal-title">冲刺计划</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>     
-          <!-- 模态框主体 -->
-          <div class="modal-body">
-            冲刺计划内容..
-          </div>    
-          <!-- 模态框底部 -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+    </thead>
+    <tbody>
+      <tr *ngFor="let splitplan of splitplans;index as i">
+        <td>{{splitplan.id}}</td>
+        <td>{{splitplan.splitName}}</td>
+        <td>{{splitplan.projectName}}</td>
+        <td>{{splitplan.startTime}}</td>
+        <td>{{splitplan.endTime}}</td>
+        <td>  <a href="#"  data-toggle="modal" data-target="#myModal" (click)="showcontent(splitplan)">查看详情</a></td>
+        <td>{{splitplan.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+     <!-- 查看冲刺内容的模态框 -->
+     <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+              <h4 class="modal-title">冲刺计划</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>     
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+               {{content}}
+            </div>    
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-   
