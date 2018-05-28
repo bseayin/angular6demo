@@ -1,0 +1,13 @@
+<p>
+  config works!
+</p>
+<span *ngIf="config">
+  <p>Heroes API URL is "{{config.heroesUrl}}"</p>
+  <p>Textfile URL is "{{config.textfile}}"</p>
+  <div *ngIf="headers">
+    Response headers:
+    <ul>
+      <li *ngFor="let header of headers">{{header}}</li>
+    </ul>
+  </div>
+</span>

@@ -26,7 +26,9 @@ import { TasklistComponent } from './tasklist/tasklist.component';
 import { TaskComponent } from './task/task.component';
 import { Binddemo1Component } from './binddemo1/binddemo1.component';
 import { JquerydemoComponent } from './jquerydemo/jquerydemo.component';
-
+import { Httpdemo2Component } from './httpdemo2/httpdemo2.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ConfigComponent } from './config/config.component';
 
 
 @NgModule({
@@ -51,11 +53,13 @@ import { JquerydemoComponent } from './jquerydemo/jquerydemo.component';
     TasklistComponent,
     TaskComponent,
     Binddemo1Component,
-    JquerydemoComponent
+    JquerydemoComponent,
+    Httpdemo2Component,
+    ConfigComponent
  
   ],
   imports: [
-    BrowserModule,AlertModule.forRoot(), AppRoutingModule,FormsModule
+    BrowserModule,AlertModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
