@@ -20,12 +20,12 @@
         <td>{{demandconfirm.startTime}}</td>
         <td>{{demandconfirm.endTime}}</td>
         <td *ngIf="!demandconfirm.isUpdateModel">{{demandconfirm.taskStatus}}</td>
-        <td *ngIf="demandconfirm.isUpdateModel"><input type="text" name="taskStatus"  [(value)]="demandconfirm.taskStatus" ></td>
+        <td *ngIf="demandconfirm.isUpdateModel"><input type="text" name="taskStatus"  [(value)]="demandconfirm.taskStatus" [(ngModel)]="demandconfirm.taskStatus"></td>
         <td>  <a href="#"  data-toggle="modal" data-target="#myModal" (click)="showcontent(demandconfirm)">查看详情</a></td>
         <td *ngIf="!demandconfirm.isUpdateModel">{{demandconfirm.isPass}}</td>
-        <td *ngIf="demandconfirm.isUpdateModel"><input type="text" name="isPass"  [(value)]="demandconfirm.isPass" ></td>
+        <td *ngIf="demandconfirm.isUpdateModel"><input type="text" name="isPass"  [(value)]="demandconfirm.isPass" [(ngModel)]="demandconfirm.isPass"></td>
         <td *ngIf="!demandconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="update(i)">修改</button><button type="button" class="btn btn-link" (click)="delete(i)">删除</button></td>
-        <td *ngIf="demandconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrim(member)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdate(i)">取消</button></td>
+        <td *ngIf="demandconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrim(i)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdate(i)">取消</button></td>
       </tr>
     </tbody>
   </table>

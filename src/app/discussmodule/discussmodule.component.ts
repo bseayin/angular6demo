@@ -31,9 +31,8 @@ export class DiscussmoduleComponent implements OnInit {
   delete(i){
     this.demandconfirms.splice(i,1);
   }
-  updateConfrim(m:demandconfirm){
-    console.log("updateConfrimMember--i="+m.taskName)
-    console.log(m)
+  updateConfrim(i){
+    this.demandconfirms[i].isUpdateModel=false;
   }
 }
 export class demandconfirm{
