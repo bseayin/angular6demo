@@ -1,18 +1,18 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" routerLink="./basicset">基础设置</a>
+    <a [class]="item1" routerLink="./basicset" (click)="clickItem2('A')">基础设置</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLink="./teamfilesset">团队档案</a>
+    <a [class]="item2" routerLink="./teamfilesset" (click)="clickItem2('B')">团队档案</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLink="./memberset">成员管理</a>
+    <a [class]="item3" routerLink="./memberset" (click)="clickItem2('C')">成员管理</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLink="./projectmg">项目管理</a>
+    <a [class]="item4" routerLink="./projectmg" (click)="clickItem2('D')">项目管理</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">个人设置</a>
+    <a [class]="item5" href="#" (click)="clickItem2('E')">个人设置</a>
   </li>
 
 </ul>
