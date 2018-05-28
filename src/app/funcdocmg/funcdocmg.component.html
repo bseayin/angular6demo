@@ -4,40 +4,32 @@
       <select>
         <option>项目1</option>
       </select>
+      <br/>
+      模块：<input type="text" style="width:80px"><br/>
+      <select style="width:80px">
+        <option>外部逻辑</option>
+        <option>内部关系</option>
+      </select>
 		</div>
 		<div class="col-md-11 column">
       <h2>功能点1</h2>
-      <img src style="height:200px"><img src style="height:200px"><img src style="height:200px"><img src style="height:200px">
+      <img src style="height:200px"><img src style="height:200px"><img src style="height:200px"><img src style="height:200px"><br/>
       <textarea style="width:750px;height:400px"></textarea><br/>
-      <input type="file" style="width:200px"><input type="button" value="上传"><input type="button" value="修改" style="margin-left:450px;position:inline">
+      <input type="file" style="width:200px"><input type="button" value="上传图片"><input type="button" value="修改" style="margin-left:400px;position:inline">
     </div>
-    <table class="table" style="margin-top:50px">
+    <table class="table" style="margin-top:50px;margin-bottom: 50px">
         <thead>
           <tr>
             <th scope="col">功能点</th>
-            <th>优先顺序</th>
-            <th>需求时间</th>
-            <th>冲刺阶段</th>
+            <th>模块</th>
+            <th>关系</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">功能点1</th>
-            <th>紧急</th>
-            <th>3</th>
-            <th>7</th>
-          </tr>
-          <tr>
-            <th scope="row">功能点2</th>
-            <th>普通</th>
-            <th>4</th>
-            <th>7</th>
-          </tr>
-          <tr>
-            <th scope="row">功能点3</th>
-            <th>严重</th>
-            <th>5</th>
-            <th>7</th>
+          <tr *ngFor="let funcpoint of funcpoints; index as i;" class="danger">
+            <th scope="row" [(ngModel)]="funcpoint.name"></th>
+            <th>{{funcpoint.module}}</th>
+            <th>{{funcpoint.node}}</th>
           </tr>
         </tbody>
       </table>
