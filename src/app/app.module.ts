@@ -25,6 +25,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { TasklistComponent } from './tasklist/tasklist.component';
 import { TaskComponent } from './task/task.component';
 import { Binddemo1Component } from './binddemo1/binddemo1.component';
+import { JquerydemoComponent } from './jquerydemo/jquerydemo.component';
 
 
 
@@ -49,7 +50,8 @@ import { Binddemo1Component } from './binddemo1/binddemo1.component';
     ResumeComponent,
     TasklistComponent,
     TaskComponent,
-    Binddemo1Component
+    Binddemo1Component,
+    JquerydemoComponent
  
   ],
   imports: [

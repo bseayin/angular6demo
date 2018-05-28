@@ -14,10 +14,11 @@ import { FuncdocmgComponent } from './funcdocmg/funcdocmg.component';
 import { TaskComponent} from './task/task.component';
 import { TasklistComponent} from './tasklist/tasklist.component';
 import { Binddemo1Component } from './binddemo1/binddemo1.component';
+import { JquerydemoComponent } from './jquerydemo/jquerydemo.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
   { path: '', redirectTo: '/setingmodule', pathMatch: 'full' },
-  { path: 'heroes', component: Binddemo1Component },
+  { path: 'heroes', component: JquerydemoComponent },
   { path: 'indexmodule', component: IndexmoduleComponent },
   { path: 'discussmodule', component: DiscussmoduleComponent },
   { path: 'funcdocmg', component: FuncdocmgComponent }, 
