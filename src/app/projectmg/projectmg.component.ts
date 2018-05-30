@@ -1,32 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { FuncPoint } from './funcPoint' 
+import { ProjectmgService } from './projectmg.service';
 
 @Component({
   selector: 'app-projectmg',
   templateUrl: './projectmg.component.html',
+  providers: [ ProjectmgService ],
   styleUrls: ['./projectmg.component.css']
 })
 export class ProjectmgComponent implements OnInit {
-  private funcpoints:Array<funcpoint>;
-  constructor() { }
+  funcpoints: FuncPoint[];
+
+  constructor(private projectmgService: ProjectmgService) { }
   isUpdateTR=1;
 
-private selectResume=false;
+  private selectResume=false;
   ngOnInit() {
-    this.funcpoints=[
-      new funcpoint("功能点1","普通",545,false),
-      new funcpoint("功能点2","紧急",452,false),
-      new funcpoint("功能点3","严重",319,false),
-    ]
+   this.getFuncpoints();
   }
-  findResume(){
-   this. selectResume=true;
-      }
-    }
-  export class funcpoint{
-  constructor(
-    public name:string,
-    public priority: string,
-    public during: number,
-    public isUpdateModel:boolean
-  ) { }  
+  getFuncpoints(): void {
+    this.projectmgService.getFuncPointes()
+      .subscribe(funcpoints => this.funcpoints = funcpoints);
+  }
+
 }
