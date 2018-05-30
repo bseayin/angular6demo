@@ -13,11 +13,19 @@ This project was generated with [Angular CLI]  version 6.0.1+bootstrap4
  ### <br>5.bootstrap navbar（导航栏） example
  ### <br>6.angular6 ngFor+bootstrap table example
  ### <br>7.angular6 router 路由 example
+ ### <br>8. 属性绑定，事件绑定，双向绑定 example
+ ### <br>9. 集成jquery  example
+ ### <br>10. httpClient 获取json数据 example
+ ### <br>11. 注入服务  example
+
+
  ###  知识点
    脑图地址： http://naotu.baidu.com/file/3fc4186932118195edf5532f7e873799?token=55ced4d4d2f377ea
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angular6.png)
  ### 效果图
-  
+   ![maze](https://github.com/bseayin/angular6demo/raw/master/img/任务.png)
+  ![maze](https://github.com/bseayin/angular6demo/raw/master/img/设置.png)
+   ![maze](https://github.com/bseayin/angular6demo/raw/master/img/讨论.png)
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angulardemo1.png)
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angulardemo2.png)
 

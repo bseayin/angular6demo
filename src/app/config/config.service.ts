@@ -13,7 +13,7 @@ export interface Config {
 })
 export class ConfigService {
 
-  configUrl = 'assets/config.json';
+  configUrl = 'codebuilder/testjson';
 
   constructor(private http: HttpClient) { }
 
