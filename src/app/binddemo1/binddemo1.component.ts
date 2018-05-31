@@ -21,7 +21,7 @@ export class Binddemo1Component implements OnInit {
   private members:Array<member>;
   constructor() { }
 
-
+  birthday:Date =new Date();
   ngOnInit() {
     this.members=[
       new member(1,"高寿山1","拉拉啊","fds","fds","432","432",false),

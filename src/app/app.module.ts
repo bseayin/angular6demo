@@ -29,6 +29,9 @@ import { JquerydemoComponent } from './jquerydemo/jquerydemo.component';
 import { Httpdemo2Component } from './httpdemo2/httpdemo2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigComponent } from './config/config.component';
+import { CommonModule } from '@angular/common';
+import { FileUploadModule } from 'ng2-file-upload';
+import { Fileuploaddemo1Component } from './fileuploaddemo1/fileuploaddemo1.component';
 
 
 @NgModule({
@@ -55,11 +58,12 @@ import { ConfigComponent } from './config/config.component';
     Binddemo1Component,
     JquerydemoComponent,
     Httpdemo2Component,
-    ConfigComponent
+    ConfigComponent,
+    Fileuploaddemo1Component
  
   ],
   imports: [
-    BrowserModule,AlertModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule
+    BrowserModule,AlertModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule,CommonModule,FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

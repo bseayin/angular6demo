@@ -1,0 +1,8 @@
+<p>
+  test-upload-file works!
+</p>
+<hr style="border: 1px solid blue;" />
+
+
+<input type="file" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)" />
+<button (click)="uploadFile()">点击上传</button>

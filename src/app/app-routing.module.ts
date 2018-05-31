@@ -16,10 +16,11 @@ import { TasklistComponent} from './tasklist/tasklist.component';
 import { Binddemo1Component } from './binddemo1/binddemo1.component';
 import { JquerydemoComponent } from './jquerydemo/jquerydemo.component';
 import { ConfigComponent } from './config/config.component';
+import { Fileuploaddemo1Component } from './fileuploaddemo1/fileuploaddemo1.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
   { path: '', redirectTo: '/setingmodule', pathMatch: 'full' },
-  { path: 'heroes', component: ConfigComponent },
+  { path: 'heroes', component: Fileuploaddemo1Component },
   { path: 'indexmodule', component: IndexmoduleComponent },
   { path: 'discussmodule', component: DiscussmoduleComponent },
   { path: 'funcdocmg', component: FuncdocmgComponent }, 
