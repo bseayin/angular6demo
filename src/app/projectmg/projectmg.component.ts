@@ -32,13 +32,19 @@ export class ProjectmgComponent implements OnInit {
       .subscribe(funcpoints => this.funcpoints = funcpoints);
   }
   findResume() : void {
+    this.resumes=null
     console.log($("#key1DJW").val());
    this. key1=$("#key1DJW").val()
    this. key2=$("#key2DJW").val()
    this. key3=$("#key3DJW").val()
     alert("进来了")
-    this.projectmgService.getResumeByKey(this.key1,this.key2,this.key3).subscribe(resumes => this.resumes = resumes);
-       this. selectResume=true;
+    this.projectmgService.getResumeByKey(this.key1,this.key2,this.key3).subscribe(resumes => {
+      this.resumes = resumes
+      this. selectResume=true;
+      if(resumes.length==0){
+        alert("没有数据");
+      }
+    });
   }
   getProjectProperties(): void {
     this.projectmgService.getProjectProperties()
