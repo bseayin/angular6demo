@@ -43,7 +43,6 @@ export class ProjectmgComponent implements OnInit {
   getProjectProperties(): void {
     this.projectmgService.getProjectProperties()
       .subscribe(projects => this.projects = projects);
-      this.pro = this.projects.pop();
   }
   
 }
