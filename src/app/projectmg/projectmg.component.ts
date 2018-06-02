@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FuncPoint } from './funcPoint' 
 import { ProjectmgService } from './projectmg.service';
 import { Resume } from './resume' 
-import * as $ from 'jquery';
+import { Project } from './project'
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-projectmg',
@@ -12,6 +13,8 @@ import * as $ from 'jquery';
 })
 export class ProjectmgComponent implements OnInit {
   funcpoints: FuncPoint[];
+  projects: Project[];
+  pro: Project;
   resumes:Resume[];
   key1:String
   key2:String
@@ -22,6 +25,7 @@ export class ProjectmgComponent implements OnInit {
   private selectResume=false;
   ngOnInit() {
    this.getFuncpoints();
+   this.getProjectProperties();
   }
   getFuncpoints(): void {
     this.projectmgService.getFuncPointes()
@@ -35,5 +39,10 @@ export class ProjectmgComponent implements OnInit {
     alert("进来了")
     this.projectmgService.getResumeByKey(this.key1,this.key2,this.key3).subscribe(resumes => this.resumes = resumes);
        this. selectResume=true;
-           }
+  }
+  getProjectProperties(): void {
+    this.projectmgService.getProjectProperties()
+      .subscribe(projects => this.projects = projects);
+  }
+  
 }

@@ -1,5 +1,7 @@
 <div>
-  <h2>项目</h2> <span style="position: absolute;left:250px;bottom:275px">项目周期:</span><span style="position:absolute;left:500px;bottom:275px">项目等级:</span><span style="position:absolute;left:750px;bottom:275px">项目冲刺阶段:</span>
+  <span style="font-size: 40px">项目</span><div *ngIf="projects"><span style="margin-left:100px" > 项目周期:</span><span>{{projects.period}}</span>
+  <span style="margin-left:100px" >项目等级:</span><span>{{projects.level}}</span><span style="margin-left:100px" >项目冲刺阶段:</span><span>{{projects.pulse}}</span>
+</div><br/>
   <input type="button" value="修改" style="position:inline" data-toggle="modal" data-target="#pro_info_revise">&nbsp;&nbsp;&nbsp;
   <input type="button" value="添加功能点" style="position:inline" data-toggle="modal" data-target="#func_point_add">
 </div>
