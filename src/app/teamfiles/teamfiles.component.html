@@ -15,8 +15,8 @@
         <td>{{sprintplan.id}}</td>
         <td>{{sprintplan.title}}</td>
         <td>{{sprintplan.pId}}</td>
-        <td>{{sprintplan.startTime}}</td>
-        <td>{{sprintplan.endTime}}</td>
+        <td>{{sprintplan.startTime |date:'yyyy-MM-dd'}}</td>
+        <td>{{sprintplan.endTime |date:'yyyy-MM-dd'}}</td>
         <td>  <a href="#"  data-toggle="modal" data-target="#myModal" (click)="showcontent(sprintplan)">查看详情</a></td>
         <td>{{sprintplan.status}}</td>
       </tr>
