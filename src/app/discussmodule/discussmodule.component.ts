@@ -27,4 +27,10 @@ export class DiscussmoduleComponent implements OnInit {
    cancelupdate(i){
       this.taskconfirms[i].isUpdateModel=false;
      }
+     delete(i){
+         this.taskconfirms.splice(i,1);
+       }
+       updateConfrim(i){
+        this.taskconfirms[i].isUpdateModel=false;
+       }
 }
