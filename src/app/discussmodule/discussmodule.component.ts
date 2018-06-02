@@ -30,17 +30,14 @@ export class DiscussmoduleComponent implements OnInit {
      }
    delete(i){
          this.taskconfirms.splice(i,1);
+         this.DiscussmoduleService.deleteTaskConfirms(this.taskconfirms[i].id);
    }
   updateConfrim(i){
-
   this.taskconfirms[i].isUpdateModel=false;
-  console.log("updateConfrim"+i);
-  console.log(this.taskconfirms[i]);
   this.DiscussmoduleService.updateTaskConfirms(this.taskconfirms[i])
   .subscribe(updaters => {
     // replace the hero in the heroes list with update from server
-   console.log("修改成功");
-   alert("修改成功");
+   alert("修改成功!");
   });
   }
 }
