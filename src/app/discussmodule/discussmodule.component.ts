@@ -10,6 +10,7 @@ export class DiscussmoduleComponent implements OnInit {
   private taskconfirms:TaskConfirm[];
   private content:String
   private updaters:String
+  private delecters:String
   constructor(private DiscussmoduleService: DiscussmoduleService) { }
   isUpdateTR=1; 
   ngOnInit() {
@@ -30,7 +31,11 @@ export class DiscussmoduleComponent implements OnInit {
      }
    delete(i){
          this.taskconfirms.splice(i,1);
-         this.DiscussmoduleService.deleteTaskConfirms(this.taskconfirms[i].id);
+         this.DiscussmoduleService.deleteTaskConfirms(this.taskconfirms[i].id)
+         .subscribe(delecters => {
+          // replace the hero in the heroes list with update from server
+         alert("删除成功!");
+        });;
    }
   updateConfrim(i){
   this.taskconfirms[i].isUpdateModel=false;
