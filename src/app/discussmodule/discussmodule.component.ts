@@ -9,6 +9,7 @@ import { DiscussmoduleService } from './discussmodule.service';
 export class DiscussmoduleComponent implements OnInit {
   private taskconfirms:TaskConfirm[];
   private content:String
+  private updaters:String
   constructor(private DiscussmoduleService: DiscussmoduleService) { }
   isUpdateTR=1; 
   ngOnInit() {
@@ -27,10 +28,19 @@ export class DiscussmoduleComponent implements OnInit {
    cancelupdate(i){
       this.taskconfirms[i].isUpdateModel=false;
      }
-     delete(i){
+   delete(i){
          this.taskconfirms.splice(i,1);
-       }
-       updateConfrim(i){
-        this.taskconfirms[i].isUpdateModel=false;
-       }
+   }
+  updateConfrim(i){
+
+  this.taskconfirms[i].isUpdateModel=false;
+  console.log("updateConfrim"+i);
+  console.log(this.taskconfirms[i]);
+  this.DiscussmoduleService.updateTaskConfirms(this.taskconfirms[i])
+  .subscribe(updaters => {
+    // replace the hero in the heroes list with update from server
+   console.log("修改成功");
+   alert("修改成功");
+  });
+  }
 }

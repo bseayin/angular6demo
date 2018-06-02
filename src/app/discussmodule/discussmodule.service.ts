@@ -20,6 +20,7 @@ const httpOptions = {
 })
 export class DiscussmoduleService {
   taskconfirmUrl = 'codebuilder/showalltaskconfirmzw';  // URL to web api
+  updatetaskconfirmUrl = 'codebuilder/savetaskconfirm';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -75,7 +76,7 @@ export class DiscussmoduleService {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'my-new-auth-token');
 
-    return this.http.put<TaskConfirm>(this.taskconfirmUrl, TaskConfirm, httpOptions)
+    return this.http.put<TaskConfirm>(this.updatetaskconfirmUrl, TaskConfirm, httpOptions)
       .pipe(
         catchError(this.handleError('updateSprintPlan', TaskConfirm))
       );
