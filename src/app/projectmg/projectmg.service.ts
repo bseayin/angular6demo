@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 
 import { FuncPoint } from './funcPoint'
 import { Resume } from './resume'
+import { Project } from './project'
 import { HttpErrorHandlerService, HandleError } from '../http-error-handler.service';
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,6 +23,7 @@ const httpOptions = {
 export class ProjectmgService {
   FuncPointesUrl = 'codebuilder/FuncAllPointDJW';  // URL to web api
   FuncPointesUrl2= 'codebuilder/resumeRetrieval';
+  ProjectUrl = 'codebuilder/getProjectPropertiesAnays?title=title1';
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -47,7 +49,13 @@ export class ProjectmgService {
         catchError(this.handleError('getFuncPointes', []))
       );
   }
-
+  /** Get Properties of the owner's project */
+  getProjectProperties (): Observable<Project[]>{
+    return this.http.get<Project[]>(this.ProjectUrl)
+    .pipe(
+      catchError(this.handleError('getProjects',[]))
+    );
+   }
   /* GET FuncPointes whose name contains search term */
   searchFuncPointes(term: string): Observable<FuncPoint[]> {
     term = term.trim();
