@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FuncPoint } from './funcPoint' 
 import { ProjectmgService } from './projectmg.service';
 import { Resume } from './resume' 
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-projectmg',
