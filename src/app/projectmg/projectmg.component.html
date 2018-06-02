@@ -65,13 +65,13 @@
         </div>
         <div class="row">
           <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="关键词1" aria-label="Username" aria-describedby="basic-addon1" >
+              <input type="text" class="form-control" id="key1DJW" placeholder="关键词1" aria-label="Username" aria-describedby="basic-addon1" >
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" placeholder="关键词2" aria-label="Username" aria-describedby="basic-addon1" >
+                <input type="text" class="form-control" id="key2DJW" placeholder="关键词2" aria-label="Username" aria-describedby="basic-addon1" >
               </div>
               <div class="col-md-3">
-                  <input type="text" class="form-control" placeholder="关键词3" aria-label="Username" aria-describedby="basic-addon1" >
+                  <input type="text" class="form-control" id="key3DJW" placeholder="关键词3" aria-label="Username" aria-describedby="basic-addon1" >
                 </div> 
                 <div class="col-md-3">
                     <button type="button" class="btn btn-info" (click)="findResume()">关键词搜索</button>
@@ -83,7 +83,32 @@
                     </form>
                   </nav>         
         </div>
-        <app-resume *ngIf="selectResume"></app-resume>
+        <!--<app-resume *ngIf="selectResume"></app-resume>-->
+        <div class="table-responsive" *ngIf="selectResume">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">用户名</th>
+                <th scope="col">真实姓名</th>
+                <th scope="col">做过项目</th>
+                <th scope="col">做过功能点</th>
+                <th scope="col">是否指派</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let resume of resumes" class="danger">
+                <td>{{resume.id}}</td>
+                <td>{{resume.userName}}</td>
+                <td>{{resume.trueName}}</td>
+                <td>{{resume.pContent}}</td>
+                <td>{{resume.fContent}}</td>
+                <td><input type="checkbox" aria-label="Checkbox for following text input"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       
       </div>
       <div class="modal-footer">
