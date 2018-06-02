@@ -18,19 +18,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let demandconfirm of demandconfirms;index as i">
-        <td>{{demandconfirm.id}}</td>
-        <td>{{demandconfirm.taskName}}</td>
-        <td>{{demandconfirm.functionPoint}}</td>
-        <td>{{demandconfirm.startTime}}</td>
-        <td>{{demandconfirm.endTime}}</td>
-        <td *ngIf="!demandconfirm.isUpdateModel">{{demandconfirm.taskStatus}}</td>
-        <td *ngIf="demandconfirm.isUpdateModel"><input type="text" name="taskStatus"  [(value)]="demandconfirm.taskStatus" [(ngModel)]="demandconfirm.taskStatus"></td>
-        <td>  <a href="#"  data-toggle="modal" data-target="#myModal" (click)="showcontent(demandconfirm)">查看详情</a></td>
-        <td *ngIf="!demandconfirm.isUpdateModel">{{demandconfirm.isPass}}</td>
-        <td *ngIf="demandconfirm.isUpdateModel"><input type="text" name="isPass"  [(value)]="demandconfirm.isPass" [(ngModel)]="demandconfirm.isPass"></td>
-        <td *ngIf="!demandconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="update(i)">修改</button><button type="button" class="btn btn-link" (click)="delete(i)">删除</button></td>
-        <td *ngIf="demandconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrim(i)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdate(i)">取消</button></td>
+      <tr *ngFor="let taskconfirm of taskconfirms;index as i">
+        <td>{{taskconfirm.id}}</td>
+        <td>{{taskconfirm.tId}}</td>
+        <td>{{taskconfirm.fId}}</td>
+        <td>{{taskconfirm.startTime |date:'yyyy-MM-dd'}}</td>
+        <td>{{taskconfirm.endTime |date:'yyyy-MM-dd'}}</td>
+        <td *ngIf="!taskconfirm.isUpdateModel">{{taskconfirm.status}}</td>
+        <td *ngIf="taskconfirm.isUpdateModel"><input type="text" name="taskStatus"  [(value)]="taskconfirm.status" [(ngModel)]="taskconfirm.status"></td>
+        <td>  <a href="#"  data-toggle="modal" data-target="#myModal" (click)="showcontent(taskconfirm)">查看详情</a></td>
+        <td *ngIf="!taskconfirm.isUpdateModel">{{taskconfirm.isPass}}</td>
+        <td *ngIf="taskconfirm.isUpdateModel"><input type="text" name="isPass"  [(value)]="taskconfirm.isPass" [(ngModel)]="taskconfirm.isPass"></td>
+        <td *ngIf="!taskconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="update(i)">修改</button><button type="button" class="btn btn-link" (click)="delete(i)">删除</button></td>
+        <td *ngIf="taskconfirm.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrim(i)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdate(i)">取消</button></td>
       </tr>
     </tbody>
   </table>
