@@ -6,7 +6,8 @@ import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { FuncPoint } from './funcPoint' 
+import { FuncPoint } from './funcPoint'
+import { Resume } from './resume'
 import { HttpErrorHandlerService, HandleError } from '../http-error-handler.service';
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,13 +21,24 @@ const httpOptions = {
 })
 export class ProjectmgService {
   FuncPointesUrl = 'codebuilder/FuncAllPointDJW';  // URL to web api
+  FuncPointesUrl2= 'codebuilder/resumeRetrieval';
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
     httpErrorHandler: HttpErrorHandlerService) {
     this.handleError = httpErrorHandler.createHandleError('FuncPointesService');
   }
-
+  /**根据关键词遍历简历 */
+  getResumeByKey (key1: String,key2:String,key3:String): Observable<Resume[]> {
+    console.log(key1);
+    console.log(key2);
+    console.log(key3);
+    const url = `${this.FuncPointesUrl2}/${key1}/${key2}/${key3}`; // DELETE api/FuncPointes/42
+    return this.http.post<Resume[]>(url,  httpOptions)
+      .pipe(
+        catchError(this.handleError('addFuncPoint'))
+      );
+  }
 
   /** GET FuncPointes from the server */
   getFuncPointes (): Observable<FuncPoint[]> {
