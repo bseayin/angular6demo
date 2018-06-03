@@ -22,8 +22,10 @@ const httpOptions = {
 })
 export class ProjectmgService {
   FuncPointesUrl = 'codebuilder/FuncAllPointDJW';  // URL to web api
-  FuncPointesUrl2= 'codebuilder/resumeRetrieval';
+  FuncPointesUrl2= 'codebuilder/resumeRetrieval';//根据关键词遍历简历
+  FuncPointesUrl3= 'codebuilder/selectResumeBySearchWord';//根据搜索框人名遍历简历
   ProjectUrl = 'codebuilder/getProjectPropertiesAnays?title=title1';
+  ProjectUrl2= 'codebuilder/updateProjectPropertiesAnays';
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -32,14 +34,19 @@ export class ProjectmgService {
   }
   /**根据关键词遍历简历 */
   getResumeByKey (key1: String,key2:String,key3:String): Observable<Resume[]> {
-    console.log(key1);
-    console.log(key2);
-    console.log(key3);
-    const url = `${this.FuncPointesUrl2}/${key1}/${key2}/${key3}`; // DELETE api/FuncPointes/42
+    const url = `${this.FuncPointesUrl2}/${key1}/${key2}/${key3}`; 
     return this.http.post<Resume[]>(url,  httpOptions)
       .pipe(
         catchError(this.handleError('addFuncPoint'))
       );
+  }
+  /**用搜索框内的关键字获得简历对象 */
+  getResumeBySearchKey(key:String): Observable<Resume[]>{
+    const url=`${this.FuncPointesUrl3}/${key}`;
+    return this.http.post<Resume[]>(url, httpOptions)
+    .pipe(
+      catchError(this.handleError('addFuncPoint'))
+    );
   }
 
   /** GET FuncPointes from the server */
@@ -49,13 +56,22 @@ export class ProjectmgService {
         catchError(this.handleError('getFuncPointes', []))
       );
   }
+  /** Update Properties of the owner's project */
+  updateProjectProperties (title:String,period:number,level:number,pulse: number):Observable<Project[]>{
+    const url = `${this.ProjectUrl2}/${title}/${period}/${level}/${pulse}`;
+    console.log("update start");
+    return this.http.post<Project[]>(url,httpOptions)
+      .pipe(
+        catchError(this.handleError('updateProjectProperties'))
+      );
+  }
   /** Get Properties of the owner's project */
   getProjectProperties (): Observable<Project[]>{
     return this.http.get<Project[]>(this.ProjectUrl)
     .pipe(
       catchError(this.handleError('getProjects',[]))
     );
-   }
+  }
   /* GET FuncPointes whose name contains search term */
   searchFuncPointes(term: string): Observable<FuncPoint[]> {
     term = term.trim();
