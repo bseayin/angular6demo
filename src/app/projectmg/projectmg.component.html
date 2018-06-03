@@ -80,8 +80,8 @@
                 </div> 
                 <nav class="navbar navbar-light bg-light">
                     <form class="form-inline">
-                      <input class="form-control mr-lg" type="search" placeholder="搜索人名进行简历检索" aria-label="Search" style="width:600px">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="button">搜索</button>
+                      <input class="form-control mr-lg" id="searchid" type="search" placeholder="搜索人名进行简历检索" aria-label="Search" style="width:600px">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)=findResumeByName()>搜索</button>
                     </form>
                   </nav>         
         </div>
