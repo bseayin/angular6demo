@@ -43,7 +43,12 @@ export class task{
     public demand:string,
     public start_time: string,
     public end_time: string,
-    public status:string
+    public status:string,
+    public p_id:number,
+    public p_leader:string,
+    public f_id:number,
+    public u_id:number,
+    public p_leader_id:number
   ) { }
 
 }
