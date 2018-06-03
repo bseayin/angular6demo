@@ -20,7 +20,8 @@ const httpOptions = {
 })
 export class DiscussmoduleService {
   taskconfirmUrl = 'codebuilder/showalltaskconfirmzw';  // URL to web api
-  updatetaskconfirmUrl = 'codebuilder/savetaskconfirm';  // URL to web api
+  updatetaskconfirmUrl = 'codebuilder/updatetaskconfirmzw';  // URL to web api
+  deleteTaskConfirmsUrl = 'codebuilder/deletetaskconfirmzw';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -64,7 +65,7 @@ export class DiscussmoduleService {
 
   /** DELETE: delete the SprintPlan from the server */
   deleteTaskConfirms (id: number): Observable<{}> {
-    const url = `${this.taskconfirmUrl}/${id}`; // DELETE api/SprintPlanes/42
+    const url = `${this.deleteTaskConfirmsUrl}/${id}`; // DELETE api/SprintPlanes/42
     return this.http.delete(url, httpOptions)
       .pipe(
         catchError(this.handleError('deleteTaskConfirms'))
