@@ -22,6 +22,7 @@ export class DiscussmoduleService {
   taskconfirmUrl = 'codebuilder/showalltaskconfirmzw';  // URL to web api
   updatetaskconfirmUrl = 'codebuilder/updatetaskconfirmzw';  // URL to web api
   deleteTaskConfirmsUrl = 'codebuilder/deletetaskconfirmzw';  // URL to web api
+  addtaskconfirmUrl='codebuilder/addtaskconfirmzw';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -57,9 +58,16 @@ export class DiscussmoduleService {
 
   /** POST: add a new SprintPlan to the database */
   addTaskConfirms(TaskConfirm: TaskConfirm): Observable<TaskConfirm> {
-    return this.http.post<TaskConfirm>(this.taskconfirmUrl, TaskConfirm, httpOptions)
+    return this.http.post<TaskConfirm>(this.addtaskconfirmUrl, TaskConfirm, httpOptions)
       .pipe(
         catchError(this.handleError('addTaskConfirm', TaskConfirm))
+      );
+  }
+  addTaskConfirms2(tId: number,fId:number,startTime:Date,endTime:Date,content:string): Observable<TaskConfirm> {
+    const url = `${this.addtaskconfirmUrl}/${tId}/${fId}/${startTime}/${endTime}/${content}`; // DELETE api/SprintPlanes/42
+    return this.http.post<TaskConfirm>(url, httpOptions)
+      .pipe(
+        catchError(this.handleError('addTaskConfirm'))
       );
   }
 

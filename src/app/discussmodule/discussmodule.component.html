@@ -7,10 +7,10 @@
     <thead class="thead-light">
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">任务名称</th>
-        <th scope="col">所属功能点</th>
-        <th scope="col">任务开始时间</th>
-        <th scope="col">任务结束时间</th>
+        <th scope="col">任务ID</th>
+        <th scope="col">功能点ID</th>
+        <th scope="col">开始时间</th>
+        <th scope="col">结束时间</th>
         <th scope="col">任务状态</th>
         <th scope="col">需求确认</th>
         <th scope="col">是否通过</th>
@@ -36,7 +36,59 @@
   </table>
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">添加</button>
   
-  
+
+     <!-- 添加的模态框 -->
+     <div class="modal fade" id="myModal2" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- 模态框头部 -->
+          <div class="modal-header">
+            <h4 class="modal-title">添加</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>     
+          <!-- 模态框主体 -->
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">任务名称</label>
+                  <input type="email" class="form-control" id="taskname" placeholder="任务名称" #tId >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">所属功能点</label>
+                    <input type="email" class="form-control" id="function" placeholder="所属功能点" #fId >
+                  </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">开始时间</label>
+                  <input type="date" class="form-control" id="startTime" placeholder="" #startTime  >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">结束时间</label>
+                  <input type="date" class="form-control" id="endTime" placeholder="" #endTime >
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputPassword4">需求确认内容</label>
+                    <textarea class="form-control" id="content" rows="3" style="height: 400px;width: 765px;resize: none;" placeholder="请输入需要确认的需求内容。。。" #content ></textarea>
+                  </div>           
+              </div>
+            </form>
+          </div>    
+          <!-- 模态框底部 -->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-info" (click)="add(tId.value,fId.value,startTime.value,endTime.value,content.value)" data-dismiss="modal">添加</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
      <!-- 查看冲刺内容的模态框 -->
      <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-lg">
@@ -48,7 +100,7 @@
             </div>     
             <!-- 模态框主体 -->
             <div class="modal-body">
-                {{content}}
+                {{contentmotai}}
             </div>    
             <!-- 模态框底部 -->
             <div class="modal-footer">
@@ -58,63 +110,4 @@
         </div>
       </div>
   
-           <!-- 添加的模态框 -->
-     <div class="modal fade" id="myModal2">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <!-- 模态框头部 -->
-            <div class="modal-header">
-              <h4 class="modal-title">添加</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>     
-            <!-- 模态框主体 -->
-            <div class="modal-body">
-              <form>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputEmail4">任务名称</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="任务名称">
-                  </div>
-                  <div class="form-group col-md-6">
-                      <label for="inputEmail4">所属功能点</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="所属功能点">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputEmail4">项目组长</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="项目组长">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">状态</label>
-                        <select id="inputState" class="form-control">
-                          <option>未开始</option>
-                          <option>进行中</option>
-                          <option>已完成</option>
-                        </select>
-                      </div>
-                  </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputEmail4">开始时间</label>
-                    <input type="date" class="form-control" id="inputEmail4" placeholder="">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputPassword4">结束时间</label>
-                    <input type="date" class="form-control" id="inputPassword4" placeholder="">
-                  </div>
-                  <div class="form-group col-md-12">
-                      <label for="inputPassword4">需求确认内容</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="height: 400px;width: 765px;resize: none;"></textarea>
-                    </div>           
-                </div>
-              </form>
-            </div>    
-            <!-- 模态框底部 -->
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-info">添加</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-            </div>
-          </div>
-        </div>
-      </div>
+        
