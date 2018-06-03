@@ -1,5 +1,5 @@
 <div>
-  <span style="font-size: 40px">项目</span><div *ngIf="projects"><span style="margin-left:100px" > 项目周期:</span><span>{{projects.period}}</span>
+  <span style="font-size: 40px" id="projectTitleAnays">title1</span><div *ngIf="projects"><span style="margin-left:100px" > 项目周期:</span><span>{{projects.period}}</span>
   <span style="margin-left:100px" >项目等级:</span><span>{{projects.level}}</span><span style="margin-left:100px" >项目冲刺阶段:</span><span>{{projects.pulse}}</span>
 </div><br/>
   <input type="button" value="修改" style="position:inline" data-toggle="modal" data-target="#pro_info_revise">&nbsp;&nbsp;&nbsp;
@@ -80,13 +80,13 @@
                 </div> 
                 <nav class="navbar navbar-light bg-light">
                     <form class="form-inline">
-                      <input class="form-control mr-lg" type="search" placeholder="搜索人名进行简历检索" aria-label="Search" style="width:600px">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="button">搜索</button>
+                      <input class="form-control mr-lg" id="searchid" type="search" placeholder="搜索人名进行简历检索" aria-label="Search" style="width:600px">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)=findResumeByName()>搜索</button>
                     </form>
                   </nav>         
         </div>
         <!--<app-resume *ngIf="selectResume"></app-resume>-->
-        <div class="table-responsive" *ngIf="selectResume">
+        <div class="table-responsive" *ngIf="selectResume&&resumes">
           <table class="table table-striped">
             <thead>
               <tr>
@@ -131,14 +131,14 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        项目周期: <input type="text"><br/>
-        项目等级: <input type="text"><br/>
-        冲刺阶段: <input type="text">
+      <div class="modal-body" *ngIf="projects">
+        项目周期: <input type="text" id="projectPeriodAnays" value="{{projects.period}}"><br/>
+        项目等级: <input type="text" id="projectLevelAnays" value="{{projects.level}}"><br/>
+        冲刺阶段: <input type="text" id="projectPulseAnays" value="{{projects.pulse}}">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateProjectProperties()">修改</button>
       </div>
     </div>
   </div>
