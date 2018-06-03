@@ -16,9 +16,13 @@ export class ProjectmgComponent implements OnInit {
   projects: Project[];
   pro: Project;
   resumes:Resume[];
-  key1:String
-  key2:String
-  key3:String
+  key1:String;
+  key2:String;
+  key3:String;
+  proPeriod:number;
+  proPulse:number;
+  protitle:String;
+  proLevel:number;
   constructor(private projectmgService: ProjectmgService) { }
   isUpdateTR=1;
 
@@ -44,5 +48,12 @@ export class ProjectmgComponent implements OnInit {
     this.projectmgService.getProjectProperties()
       .subscribe(projects => this.projects = projects);
   }
-  
+  updateProjectProperties():void{
+    this.protitle=$("#projectTitleAnays").text();
+    this.proPeriod=$("#projectPeriodAnays").val();
+    this.proLevel=$("#projectLevelAnays").val();
+    this.proPulse=$("#projectPulseAnays").val();
+    console.log(this.protitle,this.proPeriod,this.proLevel,this.proPulse);
+    this.projectmgService.updateProjectProperties(this.protitle,this.proPeriod,this.proLevel,this.proPulse);
+  }
 }
