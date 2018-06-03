@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskConfirm } from './TaskConfirm'  
 import { DiscussmoduleService } from './discussmodule.service';
+import * as $ from 'jquery'
 @Component({
   selector: 'app-discussmodule',
   templateUrl: './discussmodule.component.html',
@@ -54,6 +55,8 @@ export class DiscussmoduleComponent implements OnInit {
       .subscribe(adders => {
         alert("添加成功!");
         this.getTaskconfirms();
+        $('#addfrom')[0].reset();   
+        
       });
   }
 
