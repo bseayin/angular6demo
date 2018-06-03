@@ -12,14 +12,13 @@
     </thead>
     <tbody>
       
-      <tr *ngFor="let task of tasklist; index as i;" class="danger">
-        <td>{{task.id}}</td>
-        <td>{{task.title}}</td>
-        <td>{{task.demand}}</td>
-        <td>{{task.start_time}}</td>
-        <td>{{task.end_time}}</td>
+      <tr *ngFor="let task of tasks; index as i;" class="danger">
+        <td *ngIf="!showFlag">{{task.id}}</td>
+        <td *ngIf="!showFlag">{{task.title}}</td>
+        <td>  <a href="#"  data-toggle="modal" data-target="#taskContentModal">查看详情</a></td>
+        <td>{{task.startTime | date:'yyyy-MM-dd'}}</td>
+        <td>{{task.endTime | date:'yyyy-MM-dd'}}</td>
         <td>{{task.status}}</td>
-
 
 
               </tr>
@@ -29,7 +28,7 @@
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">添加</button>
   
    
-      <!-- 查看冲刺内容的模态框 -->
+      <!-- 查看任务详情的模态框 -->
       <div class="modal fade" id="myModal">
          <div class="modal-dialog modal-lg">
            <div class="modal-content">
@@ -49,7 +48,25 @@
            </div>
          </div>
        </div>
-   
+       <div class="modal fade" id="taskContentModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+              <h4 class="modal-title">内容详情</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>     
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                范德萨范德萨发生发的
+            </div>    
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
             <!-- 添加的模态框 -->
       <div class="modal fade" id="myModal2">
          <div class="modal-dialog modal-lg">

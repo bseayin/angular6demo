@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TasklistService } from './tasklist.service';
+import { Task } from './task'
 
 @Component({
   selector: 'app-tasklist',
@@ -6,20 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasklist.component.css']
 })
 export class TasklistComponent implements OnInit {
+  tasks: Task[];
 private tasklist:Array<task>;
-  constructor() { }
+private showFlag=false;
+  constructor(private tasklistService: TasklistService) { }
 
   ngOnInit() {
-      this.tasklist=[
-        new task(3,"寻找手艺","宫保鸡丁","2000-6-20","2222-2-28","进行中"),
-        new task(3,"寻找手艺","宫保鸡丁","2000-6-20","2222-2-28","进行中"),
-        new task(3,"寻找手艺","宫保鸡丁","2000-6-20","2222-2-28","进行中"),
-        new task(3,"寻找手艺","宫保鸡丁","2000-6-20","2222-2-28","进行中"),
-        new task(3,"寻找手艺","宫保鸡丁","2000-6-20","2222-2-28","进行中"),
-      ]
-  }
+     this.getgetTasks();
 
+     }
+     getgetTasks(): void {
+       this.tasklistService.getTasks()
+         .subscribe(tasks => this.tasks = tasks);
+     }
+    updateTask(){
+      this.showFlag=!this.showFlag;
+    }
+    deleteTask(id:string){
+      this.showFlag=!this.showFlag;
+    }
+    cancel(){
+      this.showFlag=!this.showFlag;
+    }
+    ensure(){
+      this.showFlag=!this.showFlag;
+
+    }
 }
+
 export class task{
   constructor(
     public id:number,
