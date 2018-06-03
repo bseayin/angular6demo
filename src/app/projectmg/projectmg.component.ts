@@ -48,7 +48,7 @@ export class ProjectmgComponent implements OnInit {
     });
   }
 
-  findResumeByName(){
+  findResumeByName():void{
 this.resumes=null;
 this.searchKey=$("#searchid").val();
 console.log($("#searchid").val());
