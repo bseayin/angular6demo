@@ -37,6 +37,10 @@ export class ProjectmgComponent implements OnInit {
     this.projectmgService.getFuncPointes()
       .subscribe(funcpoints => this.funcpoints = funcpoints);
   }
+  submitDJW(){
+    console.log($("input:checked").val());
+    $('#formDJW')[0].reset(); 
+  }
   findResume() : void {
     this.resumes=null
    this. key1=$("#key1DJW").val()
