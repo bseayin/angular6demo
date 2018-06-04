@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { TeamwikiService } from './teamwiki.service';
+import { TeamWikiService } from './teamwiki.service';
 
 describe('TeamwikiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TeamwikiService]
+      providers: [TeamWikiService]
     });
   });
 
-  it('should be created', inject([TeamwikiService], (service: TeamwikiService) => {
+  it('should be created', inject([TeamWikiService], (service: TeamWikiService) => {
     expect(service).toBeTruthy();
   }));
 });
