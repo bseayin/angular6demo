@@ -12,10 +12,10 @@ export class TeamwikiComponent implements OnInit {
   constructor(private TeamwikiService:TeamwikiService) { }
   isUpdateTR=1; 
   ngOnInit() {
-    this.getWiki()
+    this.getWikis()
   }
-  getWiki(): void{
-    this.TeamwikiService.getWiki()
+  getWikis(): void{
+    this.TeamwikiService.getWikis()
     .subscribe(wikis => this.wikis = wikis);
   }
 }
