@@ -1,8 +1,19 @@
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" routerLink="./teamwiki" >wiki列表</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="./personalwiki" >个人wiki</a>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-11">
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="./teamwiki" >wiki列表</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="./personalwiki" >个人wiki</a>
+    </li>
+  </ul>
+</div>
+  <div class="col-md-1"></div>
+
+</div>
+<div class="row">
+    <div class="col-md-11"><router-outlet></router-outlet></div>
+    <div class="col-md-1"></div>
+  
+  </div>
