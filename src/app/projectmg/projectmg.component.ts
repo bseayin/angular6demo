@@ -24,7 +24,8 @@ export class ProjectmgComponent implements OnInit {
   proPulse:number;
   protitle:String;
   proLevel:number;
-  searchKey:String
+  searchKey:String;
+  selectedids:String
   constructor(private projectmgService: ProjectmgService) { }
   isUpdateTR=1;
 
@@ -39,6 +40,15 @@ export class ProjectmgComponent implements OnInit {
   }
   submitDJW(){
     console.log($("input:checked").val());
+  
+   
+    var selectedids2="";
+    $("input:checked").each(function(){
+      
+      console.log("被选中的id是："+this.id);
+      selectedids2=this.id+","+selectedids2;
+    });
+    console.log("全部被选中的ids="+selectedids2);
     $('#formDJW')[0].reset(); 
   }
   findResume() : void {
