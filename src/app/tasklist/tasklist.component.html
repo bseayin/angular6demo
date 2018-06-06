@@ -15,7 +15,7 @@
       <tr *ngFor="let task of tasks; index as i;" class="danger">
         <td *ngIf="!showFlag">{{task.id}}</td>
         <td *ngIf="!showFlag">{{task.title}}</td>
-        <td>  <a href="#"  data-toggle="modal" data-target="#taskContentModal">查看详情</a></td>
+        <td (click)="show(task.demand)">  <a href="#"  data-toggle="modal" data-target="#taskContentModal" >查看详情</a></td>
         <td>{{task.startTime | date:'yyyy-MM-dd'}}</td>
         <td>{{task.endTime | date:'yyyy-MM-dd'}}</td>
         <td>{{task.status}}</td>
@@ -58,7 +58,7 @@
             </div>     
             <!-- 模态框主体 -->
             <div class="modal-body">
-                范德萨范德萨发生发的
+               {{taskcontent}}
             </div>    
             <!-- 模态框底部 -->
             <div class="modal-footer">
