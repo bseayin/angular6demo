@@ -15,14 +15,14 @@
     <table class="table" style="margin-top:50px;margin-bottom: 50px">
         <thead>
           <tr>
-            <th scope="col">功能点</th>
-            <th>模块</th>
-            <th>关系</th>
+            <th scope="col">模块</th>
+            <th>功能点</th>
+            <th>状态</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let funcpoint of funcpoints; index as i;" class="danger">
-            <th scope="row" [(ngModel)]="funcpoint.name"></th>
+            <th scope="row">{{funcpoint.name}}</th>
             <th>{{funcpoint.module}}</th>
             <th>{{funcpoint.node}}</th>
           </tr>
