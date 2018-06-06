@@ -22,4 +22,4 @@ export class BasicsetComponent implements OnInit {
         alert("添加成功!");
         // $('#addfrom')[0].reset();   
       });
-}
+}}
