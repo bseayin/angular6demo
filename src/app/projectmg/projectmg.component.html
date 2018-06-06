@@ -1,7 +1,7 @@
 <div>
-  <span style="font-size: 40px" id="projectTitleAnays">title1</span><div *ngIf="projects"><span style="margin-left:100px" > 项目周期:</span><span>{{projects.period}}</span>
-  <span style="margin-left:100px" >项目等级:</span><span>{{projects.level}}</span><span style="margin-left:100px" >项目冲刺阶段:</span><span>{{projects.pulse}}</span>
-</div><br/>
+    <span style="font-size: 40px" id="projectTitleAnays">title1</span><span style="margin-left:100px" > 项目周期:</span><span *ngIf="projects">{{projects.period}}</span>
+  <span style="margin-left:100px" >项目等级:</span><span *ngIf="projects">{{projects.level}}</span><span style="margin-left:100px" >项目冲刺阶段:</span><span *ngIf="projects">{{projects.pulse}}</span>
+<br/>
   <input type="button" value="修改" style="position:inline" data-toggle="modal" data-target="#pro_info_revise">&nbsp;&nbsp;&nbsp;
   <input type="button" value="添加功能点" style="position:inline" data-toggle="modal" data-target="#func_point_add">
 </div>
