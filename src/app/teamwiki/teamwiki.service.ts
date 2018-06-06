@@ -19,7 +19,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TeamWikiService {
-  WikiUrl = 'codebuilder/showWikizw';  // URL to web api
+  WikiUrl = 'codebuilder/showallwikizw';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,

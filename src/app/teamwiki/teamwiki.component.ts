@@ -9,6 +9,7 @@ import { Wiki } from './wiki'
 })
 export class TeamwikiComponent implements OnInit {
   wikis:Wiki[];
+  private content:String
   constructor(private TeamWikiService:TeamWikiService) { }
   isUpdateTR=1; 
   ngOnInit() {
@@ -18,4 +19,7 @@ export class TeamwikiComponent implements OnInit {
     this.TeamWikiService.getWikis()
     .subscribe(wikis => this.wikis = wikis);
   }
+  showcontent(content1){
+    this.content=content1.content;
+   }
 }

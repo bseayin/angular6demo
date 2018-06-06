@@ -9,10 +9,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let wiki of wikis;index as i">
-      <td>{{wiki.tilte}}</td>
+      <td>{{wiki.title}}</td>
       <td>  <a href="#"  data-toggle="modal" data-target="#myModal" (click)="showcontent(wiki)">查看详情</a></td>
       <td>{{wiki.userName}}</td>
-      <td>{{wiki.date}}</td>
+      <td>{{wiki.date|date:'yyyy-MM-dd'}}</td>
     </tr>
   </tbody>
 </table>
@@ -28,6 +28,7 @@
       </div>     
       <!-- 模态框主体 -->
       <div class="modal-body">
+        {{content}}
       </div>    
       <!-- 模态框底部 -->
       <div class="modal-footer">
