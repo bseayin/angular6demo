@@ -18,7 +18,9 @@ export class FuncdocmgComponent implements OnInit {
       new funcpoint("功能点3","二","外部逻辑"),
     ]
   }
-  
+  changeimg(img):void{
+    img.src="";
+  }
 }
 export class funcpoint{
   constructor(
@@ -26,6 +28,5 @@ export class funcpoint{
     public module:String,
     public node:String
   ){}
-  
 
 }
