@@ -17,10 +17,10 @@ export class WikimoduleComponent implements OnInit {
     this.item1="nav-link";
     this.item2="nav-link";
 if("A"==item){
-  this.item1="nav-link active";
+  this.item1="nav-link bg-info";
 }
 if("B"==item){
-  this.item2="nav-link active";
+  this.item2="nav-link bg-info";
 }
   }
 }
