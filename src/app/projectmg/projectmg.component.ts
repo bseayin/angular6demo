@@ -75,6 +75,7 @@ this.projectmgService.getResumeBySearchKey(this.searchKey).subscribe(resumes => 
     this.proLevel=$("#projectLevelAnays").val();
     this.proPulse=$("#projectPulseAnays").val();
     console.log(this.protitle,this.proPeriod,this.proLevel,this.proPulse);
-    this.projectmgService.updateProjectProperties(this.protitle,this.proPeriod,this.proLevel,this.proPulse);
+    this.projectmgService.updateProjectProperties(this.protitle,this.proPeriod,this.proLevel,this.proPulse).subscribe(projects=>this.getProjectProperties());
+
   }
 }
