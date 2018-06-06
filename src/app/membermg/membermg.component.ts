@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { MemberlistService } from './membermg.service';
+import { Member } from './member'
 @Component({
   selector: 'app-membermg',
   templateUrl: './membermg.component.html',
   styleUrls: ['./membermg.component.css']
 })
 export class MembermgComponent implements OnInit {
-  private members:Array<member>;
-  constructor() { }
 
+ members:Member[];
+ private delecters:string;
+  constructor(private memberlistService: MemberlistService) { }
 
   ngOnInit() {
-    this.members=[
-      new member(1,"高寿山1","拉拉啊","fds","fds","432","432",false),
-      new member(2,"高寿山2","拉拉啊","fds","fds","432","432",false),
-      new member(3,"高寿山3","拉拉啊","fds","fds","432","432",false),
-    ]
+    this.getMembers();
+
+  }
+  getMembers(): void {
+    this.memberlistService.getMembers()
+      .subscribe(members => this.members = members);
   }
   updateMember(i){
     console.log("updateMember--i="+i)
@@ -25,10 +29,17 @@ export class MembermgComponent implements OnInit {
     this.members[i].isUpdateModel=false;
   }
   deleteMember(i){
+    this.memberlistService.deleteMember(i).subscribe(delecters=>{
+      alert("删除成功");
+    })
     this.members.splice(i,1);
+
   }
-  updateConfrimMember(i){ 
-    this.members[i].isUpdateModel=false;
+  updateConfrimMember(member){ 
+    this.memberlistService.updateMember(member).subscribe(delecters=>{
+      alert("修改成功");
+    })
+    member.isUpdateModel=!member.isUpdateModel;
   }
 }
 export class member{

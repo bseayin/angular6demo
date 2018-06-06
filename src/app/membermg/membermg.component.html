@@ -4,11 +4,8 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">成员名称</th>
-        <th scope="col">真实姓名</th>
+        <th scope="col">简历编号</th>
         <th scope="col">邮箱</th>
-        <th scope="col">电话</th>
-        <th scope="col">角色</th>
-        <th scope="col">身份</th>
         <th scope="col">操作</th>
       </tr>
     </thead>
@@ -17,17 +14,11 @@
       <tr *ngFor="let member of members; index as i;" class="danger">
         <td>{{member.id}}</td>
         <td>{{member.name}}</td>
-        <td>{{member.realname}}</td>
-        <td *ngIf="!member.isUpdateModel">{{member.memberemail}}</td>
-        <td *ngIf="member.isUpdateModel"><input type="text" name="memberemail"  [(ngModel)]="member.memberemail" ></td>
-        <td *ngIf="!member.isUpdateModel">{{member.phonenumber}}</td>
-        <td *ngIf="member.isUpdateModel"><input type="text" value="{{member.phonenumber}}" [(ngModel)]="member.phonenumber"></td>
-        <td *ngIf="!member.isUpdateModel">{{member.character}}</td>
-        <td *ngIf="member.isUpdateModel"><input type="text" value="{{member.character}}" [(ngModel)]="member.character"></td>
-        <td *ngIf="!member.isUpdateModel">{{member.identify}}</td>
-        <td *ngIf="member.isUpdateModel"><input type="text" value="{{member.identify}}" [(ngModel)]="member.identify"></td>
-        <td *ngIf="!member.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateMember(i)">修改</button><button type="button" class="btn btn-link" (click)="deleteMember(i)">删除</button></td>
-        <td *ngIf="member.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrimMember(i)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdateMember(i)">取消</button></td>
+        <td>{{member.fId}}</td>
+        <td *ngIf="!member.isUpdateModel">{{member.mail}}</td>
+        <td *ngIf="member.isUpdateModel"><input type="text" name="memberemail"  [(ngModel)]="member.mail" ></td>
+        <td *ngIf="!member.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateMember(i)">修改</button><button type="button" class="btn btn-link" (click)="deleteMember(member.id)">删除</button></td>
+        <td *ngIf="member.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrimMember(member)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdateMember(i)">取消</button></td>
       </tr>
     </tbody>
   </table>
