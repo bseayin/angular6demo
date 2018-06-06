@@ -13,12 +13,14 @@ export class FuncdocmgComponent implements OnInit {
 
   ngOnInit() {
     this.funcpoints=[
-      new funcpoint("功能点1","一","外部逻辑"),
-      new funcpoint("功能点2","一","内部链接"),
-      new funcpoint("功能点3","二","外部逻辑"),
+      new funcpoint("一","功能点1","已编辑"),
+      new funcpoint("一","功能点2","未编辑"),
+      new funcpoint("二","功能点3","已编辑"),
     ]
   }
-  
+  changeimg(img):void{
+    img.src="";
+  }
 }
 export class funcpoint{
   constructor(
@@ -26,6 +28,5 @@ export class funcpoint{
     public module:String,
     public node:String
   ){}
-  
 
 }
