@@ -91,13 +91,5 @@ export class DiscussmoduleService {
         catchError(this.handleError('updateTaskConfirms', TaskConfirm))
       );
   }
-  updateTaskConfirms2 (content: String): Observable<TaskConfirm> {
-    httpOptions.headers =
-      httpOptions.headers.set('Authorization', 'my-new-auth-token');
-      const url = `${this.updatecontentUrl}/${content}`;
-    return this.http.put<TaskConfirm>(url, httpOptions)
-      .pipe(
-        catchError(this.handleError('updatecontent'))
-      );
-  }
 }
+ 
