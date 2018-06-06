@@ -32,6 +32,9 @@ import { ConfigComponent } from './config/config.component';
 import { CommonModule } from '@angular/common';
 import { FileUploadModule } from 'ng2-file-upload';
 import { Fileuploaddemo1Component } from './fileuploaddemo1/fileuploaddemo1.component';
+import { WikimoduleComponent } from './wikimodule/wikimodule.component';
+import { TeamwikiComponent } from './teamwiki/teamwiki.component';
+import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
 
 
 @NgModule({
@@ -59,7 +62,10 @@ import { Fileuploaddemo1Component } from './fileuploaddemo1/fileuploaddemo1.comp
     JquerydemoComponent,
     Httpdemo2Component,
     ConfigComponent,
-    Fileuploaddemo1Component
+    Fileuploaddemo1Component,
+    WikimoduleComponent,
+    TeamwikiComponent,
+    PersonalwikiComponent
  
   ],
   imports: [
