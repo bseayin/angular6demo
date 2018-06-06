@@ -2,10 +2,10 @@
   <div class="col-md-11">
     <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" routerLink="./teamwiki" >wiki列表</a>
+      <a [class]="item1" routerLink="./teamwiki" (click)="clickItem2('A')">wiki列表</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="./personalwiki" >个人wiki</a>
+      <a [class]="item2" routerLink="./personalwiki" (click)="clickItem2('B')">个人wiki</a>
     </li>
   </ul>
 </div>
