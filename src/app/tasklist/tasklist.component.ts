@@ -10,6 +10,7 @@ import { Task } from './task'
 export class TasklistComponent implements OnInit {
   tasks: Task[];
 private tasklist:Array<task>;
+private taskcontent:string;
 private showFlag=false;
   constructor(private tasklistService: TasklistService) { }
 
@@ -20,6 +21,9 @@ private showFlag=false;
      getgetTasks(): void {
        this.tasklistService.getTasks()
          .subscribe(tasks => this.tasks = tasks);
+     }
+     show(content){
+      this.taskcontent=content;
      }
     updateTask(){
       this.showFlag=!this.showFlag;

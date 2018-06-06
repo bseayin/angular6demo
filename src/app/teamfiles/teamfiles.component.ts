@@ -13,7 +13,6 @@ export class TeamfilesComponent implements OnInit {
   private content:String
   constructor(private teamfilesService: TeamfilesService) { }
   isUpdateTR=1; 
-  private selectResume=false;
   ngOnInit() {
     this.getSprintplans();
   }

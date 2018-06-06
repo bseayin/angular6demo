@@ -12,10 +12,12 @@ export class DiscussmoduleComponent implements OnInit {
   public taskconfirm:TaskConfirm;
   private contentmotai:String
   private updaters:String
+  private updaterscontent:String
   private delecters:String
   private adders:String
   constructor(private DiscussmoduleService: DiscussmoduleService) { }
   isUpdateTR=1; 
+  zz=true;
   ngOnInit() {
     this.getTaskconfirms();
   }
@@ -23,16 +25,31 @@ export class DiscussmoduleComponent implements OnInit {
     this.DiscussmoduleService.getTaskConfirms()
       .subscribe(taskconfirms => this.taskconfirms = taskconfirms);
   }
-  showcontent(content1){
-    this.contentmotai=content1.content;
+  showcontent(confirm){
+    this.contentmotai=confirm.content;
+    this.taskconfirm=confirm;
    }
-   update(i){
+  update(i){
        this.taskconfirms[i].isUpdateModel=true;
      }
-   cancelupdate(i){
+  update2(){
+      this.zz=false;
+    }
+  save():void{
+    this.contentmotai=$("#cc").val();
+    this.contentmotai=  this.contentmotai.trim();
+    this.taskconfirm.content=this.contentmotai;
+    this.DiscussmoduleService.updateTaskConfirms(this.taskconfirm)
+    .subscribe(updaterscontent => {
+      // replace the hero in the heroes list with update from server
+     alert("修改成功!");
+    });
+    this.zz=true;
+      }
+  cancelupdate(i){
       this.taskconfirms[i].isUpdateModel=false;
      }
-   delete(i){
+  delete(i){
          this.DiscussmoduleService.deleteTaskConfirms(this.taskconfirms[i].id)
          .subscribe(delecters => {
           // replace the hero in the heroes list with update from server
@@ -59,6 +76,5 @@ export class DiscussmoduleComponent implements OnInit {
         
       });
   }
-
 
 }
