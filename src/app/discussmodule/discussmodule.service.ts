@@ -23,6 +23,7 @@ export class DiscussmoduleService {
   updatetaskconfirmUrl = 'codebuilder/updatetaskconfirmzw';  // URL to web api
   deleteTaskConfirmsUrl = 'codebuilder/deletetaskconfirmzw';  // URL to web api
   addtaskconfirmUrl='codebuilder/addtaskconfirmzw';  // URL to web api
+  updatecontentUrl="codebuilder/updatecontentzw";
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -87,7 +88,16 @@ export class DiscussmoduleService {
 
     return this.http.put<TaskConfirm>(this.updatetaskconfirmUrl, TaskConfirm, httpOptions)
       .pipe(
-        catchError(this.handleError('updateSprintPlan', TaskConfirm))
+        catchError(this.handleError('updateTaskConfirms', TaskConfirm))
+      );
+  }
+  updateTaskConfirms2 (content: String): Observable<TaskConfirm> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'my-new-auth-token');
+      const url = `${this.updatecontentUrl}/${content}`;
+    return this.http.put<TaskConfirm>(url, httpOptions)
+      .pipe(
+        catchError(this.handleError('updatecontent'))
       );
   }
 }

@@ -2,10 +2,10 @@ export interface TaskConfirm {
     id: number;
     tId: number;
     fId: number;
-    isPass: string;
+    isPass: String;
     startTime: Date;
     endTime: Date;
-    content: string;
-    status:string;
+    content: String;
+    status:String;
     isUpdateModel:boolean;
   }

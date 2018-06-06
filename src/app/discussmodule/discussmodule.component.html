@@ -100,10 +100,13 @@
             </div>     
             <!-- 模态框主体 -->
             <div class="modal-body">
-                {{contentmotai}}
+                <p *ngIf="zz"> {{contentmotai}}  </p>
+                <textarea *ngIf="!zz" class="form-control" id="cc" rows="3" style="height: 300px;width: 765px;resize: none;" value="{{contentmotai}}"  ></textarea>
             </div>    
             <!-- 模态框底部 -->
             <div class="modal-footer">
+                <button *ngIf="zz" type="button" class="btn btn-info"  (click)="update2()">修改</button>
+                <button *ngIf="!zz" type="button" class="btn btn-info"  (click)="save()">保存</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
             </div>
           </div>
