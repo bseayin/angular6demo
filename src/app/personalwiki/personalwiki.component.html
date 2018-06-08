@@ -1,3 +1,7 @@
+<div class="alert alert-primary" role="alert">
+ 个人Wiki列表
+ <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2" style="margin-left: 900px">写wiki</button>
+</div>
 <table class="table table-hover table-info">
   <thead>
     <tr>
@@ -26,7 +30,7 @@
       </div>     
       <!-- 模态框主体 -->
       <div class="modal-body">
-        {{content}}
+        {{wikicontent}}
       </div>    
       <!-- 模态框底部 -->
       <div class="modal-footer">
@@ -35,3 +39,41 @@
     </div>
   </div>
 </div>
+
+  
+
+<!-- 添加的模态框 -->
+<div class="modal fade" id="myModal2" aria-hidden="true">
+ <div class="modal-dialog modal-lg">
+   <div class="modal-content">
+     <!-- 模态框头部 -->
+     <div class="modal-header">
+       <h4 class="modal-title">wiki</h4>
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+     </div>     
+     <!-- 模态框主体 -->
+     <div class="modal-body">
+       <form id="addfrom">
+         <div class="form-row">
+           <div class="form-group col-md-6">
+             <label for="inputEmail4">标题</label>
+             <input type="email" class="form-control" id="title" placeholder="请输入wiki标题" #title >
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group col-md-12">
+               <label for="inputPassword4">wiki内容</label>
+               <textarea class="form-control" id="content" rows="3" style="height: 400px;width: 765px;resize: none;" placeholder="请输入wiki内容。。。" #content ></textarea>
+             </div>           
+         </div>
+       </form>
+     </div>    
+     <!-- 模态框底部 -->
+     <div class="modal-footer">
+       <button type="submit" class="btn btn-info" (click)="add(title.value,content.value)" data-dismiss="modal">保存</button>
+       <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+     </div>
+   </div>
+ </div>
+</div>
+

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonalWiki } from './personalWiki' 
 import { PersonalWikiService } from './personalwiki.service';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-personalwiki',
   templateUrl: './personalwiki.component.html',
@@ -9,7 +9,8 @@ import { PersonalWikiService } from './personalwiki.service';
 })
 export class PersonalwikiComponent implements OnInit {
   PersonalWikis:PersonalWiki[];
-  private content:String
+  private wikicontent:String
+  public personalWiki:PersonalWiki;
   constructor(private PersonalWikiService:PersonalWikiService) { }
 
   ngOnInit() {
@@ -20,6 +21,17 @@ export class PersonalwikiComponent implements OnInit {
     .subscribe(PersonalWikis => this.PersonalWikis = PersonalWikis);
   }
   showcontent(content1){
-    this.content=content1.content;
+    this.wikicontent=content1.content;
    }
+   add(title:String,content:String): void {
+    content= content.trim();
+    title= title.trim();
+    this.PersonalWikiService.addWiki2(title,content)
+      .subscribe(adders => {
+        alert("添加成功!");
+        this.getWikis();
+        $('#addfrom')[0].reset();   
+        
+      });
+  }
 }
