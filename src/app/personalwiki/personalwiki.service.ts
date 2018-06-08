@@ -20,6 +20,7 @@ const httpOptions = {
 })
 export class PersonalWikiService {
   WikiUrl = 'codebuilder/showpersonalwikizw';  // URL to web api
+  addWikiUrl = 'codebuilder/addwikizw';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -55,12 +56,18 @@ export class PersonalWikiService {
 
   /** POST: add a new Wiki to the database */
   addWiki (PersonalWiki: PersonalWiki): Observable<PersonalWiki> {
-    return this.http.post<PersonalWiki>(this.WikiUrl, PersonalWiki, httpOptions)
+    return this.http.post<PersonalWiki>(this.addWikiUrl, PersonalWiki, httpOptions)
       .pipe(
         catchError(this.handleError('addWiki', PersonalWiki))
       );
   }
-
+  addWiki2(title: String,content:String): Observable<PersonalWiki> {
+    const url = `${this.addWikiUrl}/${title}/${content}`; // DELETE api/SprintPlanes/42
+    return this.http.post<PersonalWiki>(url, httpOptions)
+      .pipe(
+        catchError(this.handleError('addwiki'))
+      );
+  }
   /** DELETE: delete the Wiki from the server */
   deleteWiki (id: number): Observable<{}> {
     const url = `${this.WikiUrl}/${id}`; // DELETE api/Wikies/42
