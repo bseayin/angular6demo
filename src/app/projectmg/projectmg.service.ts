@@ -24,7 +24,7 @@ export class ProjectmgService {
   FuncPointesUrl = 'codebuilder/FuncAllPointDJW';  // URL to web api
   FuncPointesUrl2= 'codebuilder/resumeRetrieval';//根据关键词遍历简历
   FuncPointesUrl3= 'codebuilder/selectResumeBySearchWord';//根据搜索框人名遍历简历
-  ProjectUrl = 'codebuilder/getProjectPropertiesAnays?title=title1';
+  ProjectUrl = 'codebuilder/getProjectPropertiesAnays';
   ProjectUrl2= 'codebuilder/updateProjectPropertiesAnays';
   private handleError: HandleError;
   constructor(
@@ -66,8 +66,9 @@ export class ProjectmgService {
       );
   }
   /** Get Properties of the owner's project */
-  getProjectProperties (): Observable<Project[]>{
-    return this.http.get<Project[]>(this.ProjectUrl)
+  getProjectProperties (title:String): Observable<Project[]>{
+    const url = `${this.ProjectUrl}?title=${title}`;
+    return this.http.get<Project[]>(url,httpOptions)
     .pipe(
       catchError(this.handleError('getProjects',[]))
     );
