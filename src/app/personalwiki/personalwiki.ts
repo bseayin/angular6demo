@@ -1,8 +1,7 @@
 export interface PersonalWiki{
-    id:number;
-    title: string;
-    userName:string;
-    content: string;
+    title: String;
+    userName:String;
+    content: String;
     date: Date;
     u_id:number;
 }

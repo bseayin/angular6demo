@@ -23,10 +23,22 @@ export class PersonalwikiComponent implements OnInit {
   showcontent(content1){
     this.wikicontent=content1.content;
    }
-   add(title:String,content:String): void {
-    content= content.trim();
-    title= title.trim();
-    this.PersonalWikiService.addWiki2(title,content)
+  //  add(title:String,content:String): void {
+  //   content= content.trim();
+  //   title= title.trim();
+  //   this.PersonalWikiService.addWiki2(title,content)
+  //     .subscribe(adders => {
+  //       alert("添加成功!");
+  //       this.getWikis();
+  //       $('#addfrom')[0].reset();   
+        
+  //     });
+  // }
+
+  add(){
+    this.personalWiki.title=$("#title").val();
+    this.personalWiki.content=$("#content").val();
+    this.PersonalWikiService.addWiki(this.personalWiki)
       .subscribe(adders => {
         alert("添加成功!");
         this.getWikis();
