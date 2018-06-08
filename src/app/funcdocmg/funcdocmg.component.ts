@@ -20,16 +20,15 @@ export class FuncdocmgComponent implements OnInit {
     ]
     $("img.upload").each(function(){
       $(this).click(function(){
-        console.log(this);
         var a=$(this).attr("id");
         console.log(a);
         $("#"+a+"uploadbtn").click();
-        let imgFile = $("#"+a+"form")[0].files[0];
+        //let imgFile = $("#"+a+"form")[0].files[0];
         let imgFile2= document.getElementById(a+'form');
-        console.log(imgFile);
+        console.log(document.getElementById(a));
 				var fr = new FileReader();
 				fr.onload = function() {
-					document.getElementById('preview').getElementsByTagName('img')[0].src = fr.result;
+					document.getElementById(a)[0].src = fr.result;
 				};
 				// fr.readAsDataURL(imgFile);
       });
