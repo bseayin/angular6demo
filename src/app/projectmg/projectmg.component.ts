@@ -79,10 +79,17 @@ this.projectmgService.getResumeBySearchKey(this.searchKey).subscribe(resumes => 
   }
 })
   }
+  /**
+   * 获取当前项目的属性
+   */
   getProjectProperties(): void {
-    this.projectmgService.getProjectProperties()
+    this.protitle=$("#projectTitleAnays").text();
+    this.projectmgService.getProjectProperties(this.protitle)
       .subscribe(projects => this.projects = projects);
   }
+  /**
+   * 修改当前项目的属性
+   */
   updateProjectProperties():void{
     this.protitle=$("#projectTitleAnays").text();
     this.proPeriod=$("#projectPeriodAnays").val();
