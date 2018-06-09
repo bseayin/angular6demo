@@ -36,7 +36,8 @@ import { WikimoduleComponent } from './wikimodule/wikimodule.component';
 import { TeamwikiComponent } from './teamwiki/teamwiki.component';
 import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
 import { PersonalsettingComponent } from './personalsetting/personalsetting.component';
-
+import { JqxchartdemoComponent } from './jqxchartdemo/jqxchartdemo.component';
+import {NgxEchartsModule} from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -67,11 +68,12 @@ import { PersonalsettingComponent } from './personalsetting/personalsetting.comp
     WikimoduleComponent,
     TeamwikiComponent,
     PersonalwikiComponent,
-    PersonalsettingComponent
+    PersonalsettingComponent,
+    JqxchartdemoComponent
  
   ],
   imports: [
-    BrowserModule,AlertModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule,CommonModule,FileUploadModule
+    BrowserModule,AlertModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule,CommonModule,FileUploadModule,NgxEchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

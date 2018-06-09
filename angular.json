@@ -28,7 +28,9 @@
             ],
             "scripts": [
               "../angular6demo/node_modules/jquery/dist/jquery.min.js",
-              "../angular6demo/node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "../angular6demo/node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "../angular6demo/node_modules/echarts/dist/echarts.js"
+              
             ]
           },
           "configurations": {
