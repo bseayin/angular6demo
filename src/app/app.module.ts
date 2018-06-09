@@ -35,6 +35,7 @@ import { Fileuploaddemo1Component } from './fileuploaddemo1/fileuploaddemo1.comp
 import { WikimoduleComponent } from './wikimodule/wikimodule.component';
 import { TeamwikiComponent } from './teamwiki/teamwiki.component';
 import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
+import { PersonalsettingComponent } from './personalsetting/personalsetting.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
     Fileuploaddemo1Component,
     WikimoduleComponent,
     TeamwikiComponent,
-    PersonalwikiComponent
+    PersonalwikiComponent,
+    PersonalsettingComponent
  
   ],
   imports: [
