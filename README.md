@@ -26,7 +26,7 @@ This project was generated with [Angular CLI]  version 6.0.1+bootstrap4
   ### npm install --save-dev jqueryui
   ### npm install ngx-bootstrap bootstrap --save 
   ### npm install echarts --save
-  ### ###npm install ngx-echarts --save
+  ### npm install ngx-echarts --save
   ### npm install @types/echarts 
  
  ##  知识点
