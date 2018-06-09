@@ -4,7 +4,7 @@ export interface Message {
     fContent: string;
     status:string;
     pId:number;
-    updatedate:string;
+    updatedate:Date;
     pTitle:string;
    
 }

@@ -45,8 +45,6 @@ export class ProjectmgComponent implements OnInit {
       .subscribe(funcpoints => this.funcpoints = funcpoints);
   }
   submitDJW(){
-    console.log($("input:checked").val());
-    //var title=this.funcpoint.title
     var projecttitle=$("#projectTitleAnays").text();
     var sumDay=$("#sumDay").val();
     var fid=this.funcpoint.id;
@@ -55,37 +53,32 @@ export class ProjectmgComponent implements OnInit {
     var endTime=$("#endDJW").val();
     var selectedids2="";
     $("input:checked").each(function(){
-      
-      console.log("被选中的id是："+this.id);
       selectedids2=this.id+","+selectedids2;
     });
-    console.log("全部被选中的ids="+selectedids2);
     this.projectmgService.postResumeid(selectedids2,personnumber,startTime,endTime,fid,sumDay,projecttitle).subscribe(selectedids2 => {alert("指派成功，还需指定人员收到后确认")});
     $('#formDJW')[0].reset(); 
   }
+  //根据关键字遍历简历
   findResume() : void {
     this.resumes=null
    this. key1=$("#key1DJW").val()
    this. key2=$("#key2DJW").val()
    this. key3=$("#key3DJW").val()
-   console.log($("#key1DJW").val());
     this.projectmgService.getResumeByKey(this.key1,this.key2,this.key3).subscribe(resumes => {
       this.resumes = resumes
-      console.log(this.resumes);
       this. selectResume=true;
       if(resumes.length==0){
         alert("没有数据");
       }
     });
   }
-
+//根据搜索框中的用户名遍历简历
   findResumeByName():void{
 this.resumes=null;
 this.searchKey=$("#searchid").val();
 console.log($("#searchid").val());
 this.projectmgService.getResumeBySearchKey(this.searchKey).subscribe(resumes => {
   this.resumes = resumes
-  console.log(this.resumes);
   this. selectResume=true;
   if(resumes.length==0){
     alert("没有数据");
