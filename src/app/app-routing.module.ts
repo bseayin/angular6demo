@@ -21,10 +21,11 @@ import { WikimoduleComponent } from './wikimodule/wikimodule.component';
 import { TeamwikiComponent } from './teamwiki/teamwiki.component';
 import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
 import { PersonalsettingComponent } from './personalsetting/personalsetting.component';
+import { JqxchartdemoComponent } from './jqxchartdemo/jqxchartdemo.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
   { path: '', redirectTo: '/setingmodule', pathMatch: 'full' },
-  { path: 'heroes', component: Fileuploaddemo1Component },
+  { path: 'heroes', component: JqxchartdemoComponent },
   { path: 'indexmodule', component: IndexmoduleComponent },
   { path: 'discussmodule', component: DiscussmoduleComponent },
   { path: 'wikimodule', component: WikimoduleComponent,children:[
