@@ -34,4 +34,16 @@ export class PersonalwikiComponent implements OnInit {
         
       });
   }
+
+  // add(){
+  //   this.personalWiki.title=$("#title").val();
+  //   this.personalWiki.content=$("#content").val();
+  //   this.PersonalWikiService.addWiki(this.personalWiki)
+  //     .subscribe(adders => {
+  //       alert("添加成功!");
+  //       this.getWikis();
+  //       $('#addfrom')[0].reset();   
+        
+  //     });
+  // }
 }

@@ -1,7 +1,7 @@
 <div>
-    <span style="font-size: 40px" id="projectTitleAnays">title1</span><span style="margin-left:100px" > 项目周期:</span><span *ngIf="projects">{{projects.period}}</span>
-  <span style="margin-left:100px" >项目等级:</span><span *ngIf="projects">{{projects.level}}</span><span style="margin-left:100px" >项目冲刺阶段:</span><span *ngIf="projects">{{projects.pulse}}</span>
-<br/>
+  <span style="font-size: 40px" id="projectTitleAnays">title1</span><div *ngIf="projects"><span style="margin-left:100px" > 项目周期:</span><span>{{projects.period}}</span>
+  <span style="margin-left:100px" >项目等级:</span><span>{{projects.level}}</span><span style="margin-left:100px" >项目冲刺阶段:</span><span>{{projects.pulse}}</span>
+</div><br/>
   <input type="button" value="修改" style="position:inline" data-toggle="modal" data-target="#pro_info_revise">&nbsp;&nbsp;&nbsp;
   <input type="button" value="添加功能点" style="position:inline" data-toggle="modal" data-target="#func_point_add">
 </div>
@@ -21,7 +21,7 @@
         <td>{{funcpoint.priority}}</td>
         <td>{{funcpoint.personNumber}}</td>
         <td><input type="button" class="btn btn-info" value="修改">&nbsp;&nbsp;&nbsp;
-          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-info" data-toggle="modal" (click)="sendtitle(funcpoint)" data-target="#exampleModal">
             发布
           </button>
         </td>
@@ -46,25 +46,25 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="needpersonDJW">预计人数</span>
           </div>
-          <input type="text" class="form-control" placeholder="工作需要人数" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          <input type="text" class="form-control" id="pnumberDJW" placeholder="工作需要人数" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         </div>
         <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="workDJW">总工作量</span>
           </div>
-          <input type="text" class="form-control" placeholder="总工作天数" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          <input type="text" class="form-control" id="sumDay" placeholder="总工作天数" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         </div>
         <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="startDJW">开始时间</span>
+            <span class="input-group-text" >开始时间</span>
           </div>
-          <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          <input type="date" class="form-control" id="startDJW" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         </div>
         <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="endDJW">结束时间</span>
+            <span class="input-group-text">结束时间</span>
           </div>
-          <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          <input type="date" class="form-control"  id="endDJW" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         </div>
         <div class="row">
           <div class="col-md-3">

@@ -1,0 +1,19 @@
+  <div class="alert alert-info" *ngFor="let message of messages" >
+      <div class="row">
+          <strong>新消息!</strong>:您有一份项目邀请，具体内容为：
+      </div>
+      <div class="row">
+          <div class="col-md-10">
+          <Strong>{{message.fContent}}</Strong>
+          </div>
+          <div class="col-md-2">
+              <button type="button" class="btn btn-success" (click)="agree(message)">同意</button>
+              <button type="button" class="btn btn-danger" (click)="disagree(message)">不同意</button>
+          </div>                           
+      </div>
+      <div class="row">
+          {{message.updatedate|date:'yyyy-MM-dd'}}
+      </div>
+    
+  </div>
+

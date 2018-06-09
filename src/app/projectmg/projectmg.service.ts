@@ -24,7 +24,8 @@ export class ProjectmgService {
   FuncPointesUrl = 'codebuilder/FuncAllPointDJW';  // URL to web api
   FuncPointesUrl2= 'codebuilder/resumeRetrieval';//根据关键词遍历简历
   FuncPointesUrl3= 'codebuilder/selectResumeBySearchWord';//根据搜索框人名遍历简历
-  ProjectUrl = 'codebuilder/getProjectPropertiesAnays';
+  FuncPointesUrl4= 'codebuilder/getResumeid';//向后台传输完成对应功能点的人的简历的id
+  ProjectUrl = 'codebuilder/getProjectPropertiesAnays?title=title1';
   ProjectUrl2= 'codebuilder/updateProjectPropertiesAnays';
   private handleError: HandleError;
   constructor(
@@ -34,7 +35,7 @@ export class ProjectmgService {
   }
   /**根据关键词遍历简历 */
   getResumeByKey (key1: String,key2:String,key3:String): Observable<Resume[]> {
-    const url = `${this.FuncPointesUrl2}/${key1}/${key2}/${key3}`; 
+    const url = `${this.FuncPointesUrl2}?p1=${key1}&&p2=${key2}&&p3=${key3}`; 
     return this.http.post<Resume[]>(url,  httpOptions)
       .pipe(
         catchError(this.handleError('addFuncPoint'))
@@ -49,6 +50,14 @@ export class ProjectmgService {
     );
   }
 
+  /**将功能点指定给某个人完成，向后台传简历id组成的字符串，格式id1，id2，id3 还想后台传送需要人数，开始结束时间和功能点title*/
+postResumeid(rid:String,personnumber:number,startTime:Date,endTime:Date,fid:number,sumDay:number,projecttitle:String) : Observable<{}>{
+  const url = `${this.FuncPointesUrl4}/${rid}/${personnumber}/${startTime}/${endTime}/${fid}/${sumDay}/${projecttitle}`;  
+    return this.http.post(url, httpOptions)
+      .pipe(
+        catchError(this.handleError('addFuncPoint'))
+      );
+}
   /** GET FuncPointes from the server */
   getFuncPointes (): Observable<FuncPoint[]> {
     return this.http.get<FuncPoint[]>(this.FuncPointesUrl)
@@ -66,9 +75,8 @@ export class ProjectmgService {
       );
   }
   /** Get Properties of the owner's project */
-  getProjectProperties (title:String): Observable<Project[]>{
-    const url = `${this.ProjectUrl}?title=${title}`;
-    return this.http.get<Project[]>(url,httpOptions)
+  getProjectProperties (): Observable<Project[]>{
+    return this.http.get<Project[]>(this.ProjectUrl)
     .pipe(
       catchError(this.handleError('getProjects',[]))
     );

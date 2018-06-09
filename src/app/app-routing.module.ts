@@ -20,6 +20,7 @@ import { Fileuploaddemo1Component } from './fileuploaddemo1/fileuploaddemo1.comp
 import { WikimoduleComponent } from './wikimodule/wikimodule.component';
 import { TeamwikiComponent } from './teamwiki/teamwiki.component';
 import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
+import { PersonalsettingComponent } from './personalsetting/personalsetting.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
   { path: '', redirectTo: '/setingmodule', pathMatch: 'full' },
@@ -41,7 +42,8 @@ const routes: Routes = [
     { path: 'basicset', component: BasicsetComponent },
     { path: 'projectmg', component: ProjectmgComponent },
     { path: 'teamfilesset', component: TeamfilesComponent },
-    { path: 'memberset', component: MembermgComponent }
+    { path: 'memberset', component: MembermgComponent },
+    { path: 'personsetting', component: PersonalsettingComponent }
   ] },
   { path: 'dashboard', component: CarouselComponent }
 ];
