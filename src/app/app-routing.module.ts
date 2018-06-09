@@ -24,8 +24,8 @@ import { PersonalsettingComponent } from './personalsetting/personalsetting.comp
 import { JqxchartdemoComponent } from './jqxchartdemo/jqxchartdemo.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
-  { path: '', redirectTo: '/setingmodule', pathMatch: 'full' },
-  { path: 'heroes', component: JqxchartdemoComponent },
+  { path: '', redirectTo: '/heroes', pathMatch: 'full' },
+  { path: 'heroes', component: IndexmoduleComponent },
   { path: 'indexmodule', component: IndexmoduleComponent },
   { path: 'discussmodule', component: DiscussmoduleComponent },
   { path: 'wikimodule', component: WikimoduleComponent,children:[
