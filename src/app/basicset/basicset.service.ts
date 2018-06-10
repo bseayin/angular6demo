@@ -18,7 +18,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class BasicsetService {
-  addprojectUrl='codebuilder/addprojectzw';  // URL to web api
+  addprojectUrl='codebuilder/createProjectDJW';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -26,10 +26,12 @@ export class BasicsetService {
     this.handleError = httpErrorHandler.createHandleError('BasicsetService');
   }
     /** POST: add a new SprintPlan to the database */
-    addProject(Project: Project): Observable<Project> {
-      return this.http.post<Project>(this.addprojectUrl, Project, httpOptions)
+    addProject(title: String): Observable<{}> {
+      const url=`${this.addprojectUrl}/${title}`;
+      return this.http.post<Project>(url, httpOptions)
         .pipe(
-          catchError(this.handleError('addproject', Project))
+          catchError(this.handleError('addproject'))
         );
     }
+    
 }
