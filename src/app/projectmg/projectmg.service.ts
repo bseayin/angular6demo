@@ -21,12 +21,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectmgService {
-  FuncPointesUrl = 'codebuilder/FuncAllPointDJW';  // URL to web api
+  FuncPointesUrl = 'codebuilder/FuncAllPointAnays';  // URL to web api
   FuncPointesUrl2= 'codebuilder/resumeRetrieval';//根据关键词遍历简历
   FuncPointesUrl3= 'codebuilder/selectResumeBySearchWord';//根据搜索框人名遍历简历
   FuncPointesUrl4= 'codebuilder/getResumeid';//向后台传输完成对应功能点的人的简历的id
-  ProjectUrl = 'codebuilder/getProjectPropertiesAnays?title=title1';
+  ProjectUrl = 'codebuilder/getProjectPropertiesAnays';
   ProjectUrl2= 'codebuilder/updateProjectPropertiesAnays';
+  insertFuncPointUrl = 'codebuilder/createNewFuncpointAnays';
+  getAllProjectsUrl = 'codebuilder/getAllProjectsAnays';
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -40,6 +42,26 @@ export class ProjectmgService {
       .pipe(
         catchError(this.handleError('addFuncPoint'))
       );
+  }
+  /** 获取所有项目 */
+  getallProjects():Observable<Project[]>{
+    return this.http.get<Project[]>(this.getAllProjectsUrl)
+    .pipe(
+      catchError(this.handleError('addFuncPoint'))
+    );
+  }
+  /**
+   * 增加新功能点
+   * @param title     标题
+   * @param priority  优先级 
+   * @param interval  预计人天数
+   */
+  insertFuncpoint(title:String,priority:String,interval:Number,protitle:String):Observable<FuncPoint[]>{
+    const url = `${this.insertFuncPointUrl}?title=${title}&&priority=${priority}&&interval=${interval}&&protitle=${protitle}`;
+    return this.http.post<FuncPoint[]>(url,httpOptions)
+    .pipe(
+      catchError(this.handleError('addFuncPoint'))
+    );
   }
   /**用搜索框内的关键字获得简历对象 */
   getResumeBySearchKey(key:String): Observable<Resume[]>{
@@ -59,8 +81,9 @@ postResumeid(rid:String,personnumber:number,startTime:Date,endTime:Date,fid:numb
       );
 }
   /** GET FuncPointes from the server */
-  getFuncPointes (): Observable<FuncPoint[]> {
-    return this.http.get<FuncPoint[]>(this.FuncPointesUrl)
+  getFuncPointes (title:String): Observable<FuncPoint[]> {
+    const url = `${this.FuncPointesUrl}?title=${title}`;
+    return this.http.get<FuncPoint[]>(url)
       .pipe(
         catchError(this.handleError('getFuncPointes', []))
       );
@@ -75,8 +98,9 @@ postResumeid(rid:String,personnumber:number,startTime:Date,endTime:Date,fid:numb
       );
   }
   /** Get Properties of the owner's project */
-  getProjectProperties (): Observable<Project[]>{
-    return this.http.get<Project[]>(this.ProjectUrl)
+  getProjectProperties (title:String): Observable<Project[]>{
+    const url = `${this.ProjectUrl}?title=${title}`
+    return this.http.get<Project[]>(url)
     .pipe(
       catchError(this.handleError('getProjects',[]))
     );
