@@ -1,9 +1,8 @@
 export interface Member {
     id: number;
     name: string;
-    head: string;
-    fId: number;
-    rId: number;
+    tel: string;
     mail:string;
+    identity:string;
     isUpdateModel:boolean;
   }
