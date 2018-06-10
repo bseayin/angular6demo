@@ -15,11 +15,9 @@ export class BasicsetComponent implements OnInit {
   }
   add(projectname): void {
     projectname= projectname.trim();
-    alert(projectname)
-    this.pp.title=projectname
-    this.BasicsetService.addProject(this.pp)
+    this.BasicsetService.addProject(projectname)
       .subscribe(adders => {
-        alert("添加成功!");
+        alert("创建成功!");
         // $('#addfrom')[0].reset();   
       });
 }}
