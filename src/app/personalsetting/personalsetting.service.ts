@@ -30,9 +30,9 @@ return this.http.get<Message[]>(url,httpOptions)
 );
   }
   //同意加入团队
-agreeDJW(message:Message): Observable<{}>{
+agreeDJW(message:Message): Observable<Message>{
   const url=`${this.MessageUrl2}`;
-  return this.http.post(url, message,httpOptions)
+  return this.http.post<Message>(url, message,httpOptions)
   .pipe(
     catchError(this.handleError('addFuncPoint'))
   );
