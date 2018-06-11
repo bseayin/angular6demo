@@ -12,6 +12,7 @@ import * as $ from 'jquery'
 export class PersonalsettingComponent implements OnInit {
 messages:Message[];
 message:Message;
+message2:Message;
   constructor(private PersonalsettingService: PersonalsettingService) { }
 
   ngOnInit() {
@@ -26,7 +27,8 @@ message:Message;
   }
 //同意邀请
   agree(mes:Message) : void{
-    this.PersonalsettingService.agreeDJW(mes).subscribe(messages =>{
+    this.PersonalsettingService.agreeDJW(mes).subscribe(message2 =>{
+      console.log(message2);
       alert("您已同意加入团队参加项目制作");
       this.getMessage();
     });

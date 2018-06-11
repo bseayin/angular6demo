@@ -2,9 +2,9 @@
 	<div class="row clearfix">
 	
 		<div class="col-md-11 column">
-        <h2>功能点1</h2>
+        <h2 id="functitle" name="functitle">功能点1</h2>
           模块：<input type="text" style="width:300px;margin-bottom:20px">
-          &nbsp;&nbsp;&nbsp;&nbsp;区块：<select style="width:100px;margin-bottom:5px">
+          &nbsp;&nbsp;&nbsp;&nbsp;区块：<select style="width:100px;margin-bottom:5px" id="point" name="point">
             <option>跳转关系</option>
             <option>内部逻辑</option>
             <option>参数尺寸</option>
@@ -12,10 +12,10 @@
       <img src="/../../assets/TIM20180606205227.png" class="upload" style="width:185px" id="img1" ><img class="upload" src="/../../assets/TIM20180606205227.png" id="img2" style="margin-left:3.33px;width:185px"><img class="upload" src="/../../assets/TIM20180606205227.png" style="margin-left:3.33px;width:185px" id="img3"><img class="upload" src="/../../assets/TIM20180606205227.png" style="margin-left:3.33px;width:185px" id="img4"><br/>
       <textarea style="width:750px;height:400px;margin-top: 3px"></textarea><br/>
       <input type="button" class="btn btn-info" value="保存" style="position:relative;left:700px">
-      <form id="img1form"><input type="file" style="display:none" id="img1uploadbtn" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)"> </form>
-      <form id="img2form"><input type="file" style="display:none" id="img2uploadbtn" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)"> </form>
-      <form id="img3form"><input type="file" style="display:none" id="img3uploadbtn" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)"> </form>
-      <form id="img4form"><input type="file" style="display:none" id="img4uploadbtn" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)"> </form>
+      <form id="img1form"><input type="file" style="display:none" id="img1uploadbtn" ng2FileSelect [uploader]="uploader1" (change)="uploadimg()"> </form>
+      <form id="img2form"><input type="file" style="display:none" id="img2uploadbtn" ng2FileSelect [uploader]="uploader1" (change)="uploadimg()"> </form>
+      <form id="img3form"><input type="file" style="display:none" id="img3uploadbtn" ng2FileSelect [uploader]="uploader1" (change)="selectedFileOnChanged($event)"> </form>
+      <form id="img4form"><input type="file" style="display:none" id="img4uploadbtn" ng2FileSelect [uploader]="uploader1" (change)="selectedFileOnChanged($event)"> </form>
     </div>
     <table class="table" style="margin-top:50px;margin-bottom: 50px">
         <thead>

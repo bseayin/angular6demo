@@ -1,7 +1,7 @@
 <div>
-  <span style="font-size: 40px" id="projectTitleAnays">title1</span><div *ngIf="projects"><span style="margin-left:100px" > 项目周期:</span><span>{{projects.period}}</span>
-  <span style="margin-left:100px" >项目等级:</span><span>{{projects.level}}</span><span style="margin-left:100px" >项目冲刺阶段:</span><span>{{projects.pulse}}</span>
-</div><br/>
+  <select style="font-size: 40px" id="projectTitleAnays" (change)="getProjectProperties()"></select><span style="margin-left:100px" > 项目周期:</span><span *ngIf="projects">{{[projects.period]}}</span>
+  <span style="margin-left:100px" >项目等级:</span><span *ngIf="projects">{{projects.level}}</span><span style="margin-left:100px" >项目冲刺阶段:</span><span *ngIf="projects">{{projects.pulse}}</span>
+<br/>
   <input type="button" value="修改" style="position:inline" data-toggle="modal" data-target="#pro_info_revise">&nbsp;&nbsp;&nbsp;
   <input type="button" value="添加功能点" style="position:inline" data-toggle="modal" data-target="#func_point_add">
 </div>
@@ -149,19 +149,19 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="func_point_addLabel">项目信息修改</h5>
+        <h5 class="modal-title" id="func_point_addLabel">创建新功能点</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        功能点名:<input type="text" style="width:200px"><br/>
-        优先级:&nbsp;&nbsp;&nbsp;<select style="width:200px;position: relative;left:3px"><option>普通</option><option>紧急</option><option>严重</option></select><br/>
-        预计人天:<input type="number" value="0"  style="width:200px">
+        功能点名:<input type="text" style="width:200px" id="newfptitle"><br/>
+        优先级:&nbsp;&nbsp;&nbsp;<select style="width:200px;position: relative;left:3px" id="newfppriority"><option>普通</option><option>紧急</option><option>严重</option></select><br/>
+        预计人天:<input type="number" value="0"  style="width:200px" id="newfpinterval">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+        <button type="button" class="btn btn-primary" (click)="insertFuncpoint()" data-dismiss="modal">创建</button>
       </div>
     </div>
   </div>

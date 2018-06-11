@@ -13,6 +13,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./projectmg.component.css']
 })
 export class ProjectmgComponent implements OnInit {
+  allprojects:Project[];
   funcpoints: FuncPoint[];
   projects: Project[];
   resume:Resume;
@@ -25,24 +26,43 @@ export class ProjectmgComponent implements OnInit {
   proPulse:number;
   protitle:String;
   proLevel:number;
+  projectTitle:String;
   searchKey:String;
   selectedids:String
   funcpoint:FuncPoint;
   index:number;
   constructor(private projectmgService: ProjectmgService) { }
   isUpdateTR=1;
-
+  firstload=1;
   private selectResume=false;
   ngOnInit() {
-   this.getFuncpoints();
-   this.getProjectProperties();
+   this.getAllProjects();
+    
+   
   }
   sendtitle(funcpoint2){
      this.funcpoint=funcpoint2;
   }
   getFuncpoints(): void {
-    this.projectmgService.getFuncPointes()
+    var projecttitle=$("#projectTitleAnays").val();
+    this.projectmgService.getFuncPointes(projecttitle)
       .subscribe(funcpoints => this.funcpoints = funcpoints);
+  }
+  change(){
+    
+  }
+  getAllProjects(){
+    this.projectmgService.getallProjects().subscribe(allprojects => {
+      this.allprojects = allprojects;
+      for(var i=0;i<this.allprojects.length;i++){
+        $("#projectTitleAnays").append("<option>"+this.allprojects[i].title+"</option>");
+      }
+      if(this.firstload==1){
+        this.getFuncpoints();
+         this.getProjectProperties();
+         this.firstload=0;
+      }
+    });
   }
   submitDJW(){
     var projecttitle=$("#projectTitleAnays").text();
@@ -85,12 +105,22 @@ this.projectmgService.getResumeBySearchKey(this.searchKey).subscribe(resumes => 
   }
 })
   }
+  insertFuncpoint():void{
+    var newfptitle=$("#newfptitle").val();
+    var newfppriority=$("#newfppriority").val();
+    var newfpinterval=$("#newfpinterval").val();
+    var newprotitle=$("#projectTitleAnays").val();
+    this.projectmgService.insertFuncpoint(newfptitle,newfppriority,newfpinterval,newprotitle).subscribe();
+  }
   getProjectProperties(): void {
-    this.projectmgService.getProjectProperties()
-      .subscribe(projects => this.projects = projects);
+    this.projectTitle=$("#projectTitleAnays").val();
+    this.projectmgService.getProjectProperties(this.projectTitle)
+      .subscribe(projects => {
+        this.projects = projects;
+      });
   }
   updateProjectProperties():void{
-    this.protitle=$("#projectTitleAnays").text();
+    this.protitle=$("#projectTitleAnays").val();
     this.proPeriod=$("#projectPeriodAnays").val();
     this.proLevel=$("#projectLevelAnays").val();
     this.proPulse=$("#projectPulseAnays").val();
