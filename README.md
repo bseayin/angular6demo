@@ -33,9 +33,9 @@ This project was generated with [Angular CLI]  version 6.0.1+bootstrap4
    脑图地址： http://naotu.baidu.com/file/3fc4186932118195edf5532f7e873799?token=55ced4d4d2f377ea
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angular6.png)
  ## 效果图
-      ![maze](https://github.com/bseayin/angular6demo/raw/master/img/首页.png)
+   ![maze](https://github.com/bseayin/angular6demo/raw/master/img/首页.png)
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/任务2.png)
-  ![maze](https://github.com/bseayin/angular6demo/raw/master/img/设置2.png)
+   ![maze](https://github.com/bseayin/angular6demo/raw/master/img/设置2.png)
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/讨论2.png)
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angulardemo1.png)
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angulardemo2.png)
