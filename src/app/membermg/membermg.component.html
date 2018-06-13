@@ -4,8 +4,9 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">成员名称</th>
-        <th scope="col">简历编号</th>
+        <th scope="col">联系电话</th>
         <th scope="col">邮箱</th>
+        <th scope="col">身份</th>
         <th scope="col">操作</th>
       </tr>
     </thead>
@@ -14,12 +15,23 @@
       <tr *ngFor="let member of members; index as i;" class="danger">
         <td>{{member.id}}</td>
         <td>{{member.name}}</td>
-        <td>{{member.fId}}</td>
+        <td *ngIf="!member.isUpdateModel">{{member.tel}}</td>
+        <td *ngIf="member.isUpdateModel"><input type="text" name="memberemail"  [(ngModel)]="member.tel" ></td>
         <td *ngIf="!member.isUpdateModel">{{member.mail}}</td>
         <td *ngIf="member.isUpdateModel"><input type="text" name="memberemail"  [(ngModel)]="member.mail" ></td>
+        <td *ngIf="!member.isUpdateModel">{{member.identity}}</td>
+        <td *ngIf="member.isUpdateModel"><input type="text" name="memberemail"  [(ngModel)]="member.identity" ></td>
         <td *ngIf="!member.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateMember(i)">修改</button><button type="button" class="btn btn-link" (click)="deleteMember(member.id)">删除</button></td>
         <td *ngIf="member.isUpdateModel"><button type="button" class="btn btn-link" (click)="updateConfrimMember(member)">确定</button><button type="button" class="btn btn-link" (click)="cancelupdateMember(i)">取消</button></td>
       </tr>
     </tbody>
   </table>
+  <li class="col-md-1">
+   邀请成员
+    <select class="form-control selectpicker show-tick" name="leader"
+            data-first-option="false" required data-live-search="true" id="leader" (change)="getChange($event.target.value)">
+      <option value="-1">全部</option>
+      <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
+    </select>
+  </li>
 </div>

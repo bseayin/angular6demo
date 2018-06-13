@@ -30,9 +30,15 @@ export class MemberlistService {
 
   /** GET FuncPointes from the server */
   getMembers (): Observable<Member[]> {
-    return this.http.get<Member[]>(this.MemberUrl+"/1")
+    return this.http.get<Member[]>(this.MemberUrl)
       .pipe(
         catchError(this.handleError('getMembers', []))
+      );
+  }
+  invateMembers (): Observable<Member[]> {
+    return this.http.get<Member[]>('codebuilder/invateMember')
+      .pipe(
+        catchError(this.handleError('invateMember', []))
       );
   }
   deleteMember (id: number): Observable<{}> {
@@ -44,6 +50,11 @@ export class MemberlistService {
   }
   updateMember (member: Member): Observable<any> {
     return this.http.put(`codebuilder/updateMember`, member, httpOptions).pipe(
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+  insertMember (id:number): Observable<any> {
+    return this.http.put(`codebuilder/insertMember/${id}`, id, httpOptions).pipe(
       catchError(this.handleError<any>('updateHero'))
     );
   }
