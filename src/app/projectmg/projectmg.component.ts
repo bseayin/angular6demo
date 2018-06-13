@@ -60,6 +60,7 @@ export class ProjectmgComponent implements OnInit {
       if(this.firstload==1){
         this.getFuncpoints();
          this.getProjectProperties();
+         this.getFuncpoints();
          this.firstload=0;
       }
     });
@@ -118,6 +119,7 @@ this.projectmgService.getResumeBySearchKey(this.searchKey).subscribe(resumes => 
       .subscribe(projects => {
         this.projects = projects;
       });
+      this.getFuncpoints();
   }
   updateProjectProperties():void{
     this.protitle=$("#projectTitleAnays").val();
