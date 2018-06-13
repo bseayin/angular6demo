@@ -29,7 +29,12 @@ message2:Message;
   agree(mes:Message) : void{
     this.PersonalsettingService.agreeDJW(mes).subscribe(message2 =>{
       console.log(message2);
-      alert("您已同意加入团队参加项目制作");
+      if(message2.status=="成功"){
+        alert("您已同意加入团队参加项目制作");
+      }else if(message2.status=="人满了"){
+        alert("你来晚了，团队人已满");
+      }
+     
       this.getMessage();
     });
   }

@@ -65,7 +65,8 @@ export class ProjectmgComponent implements OnInit {
     });
   }
   submitDJW(){
-    var projecttitle=$("#projectTitleAnays").text();
+    var projecttitle=$("#projectTitleAnays").val();
+    console.log(projecttitle);
     var sumDay=$("#sumDay").val();
     var fid=this.funcpoint.id;
     var personnumber=$("#pnumberDJW").val();
