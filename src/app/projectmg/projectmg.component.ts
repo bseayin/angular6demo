@@ -112,7 +112,8 @@ this.projectmgService.getResumeBySearchKey(this.searchKey).subscribe(resumes => 
     var newfppriority=$("#newfppriority").val();
     var newfpinterval=$("#newfpinterval").val();
     var newprotitle=$("#projectTitleAnays").val();
-    this.projectmgService.insertFuncpoint(newfptitle,newfppriority,newfpinterval,newprotitle).subscribe();
+    this.projectmgService.insertFuncpoint(newfptitle,newfppriority,newfpinterval,newprotitle).subscribe(funcpoints =>  this.getFuncpoints());
+   
   }
   getProjectProperties(): void {
     this.projectTitle=$("#projectTitleAnays").val();
@@ -128,6 +129,6 @@ this.projectmgService.getResumeBySearchKey(this.searchKey).subscribe(resumes => 
     this.proLevel=$("#projectLevelAnays").val();
     this.proPulse=$("#projectPulseAnays").val();
     console.log(this.protitle,this.proPeriod,this.proLevel,this.proPulse);
-    this.projectmgService.updateProjectProperties(this.protitle,this.proPeriod,this.proLevel,this.proPulse);
+    this.projectmgService.updateProjectProperties(this.protitle,this.proPeriod,this.proLevel,this.proPulse).subscribe(project => this.getProjectProperties());
   }
 }
