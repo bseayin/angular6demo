@@ -11,7 +11,8 @@ export class Fileuploaddemo1Component implements OnInit {
     url: '/codebuilder/uploadClient',
     method: 'POST',
     itemAlias: 'file',
-    headers:[{name:'Authorization',value:'my-auth-token'}]
+    headers:[{name:'Authorization',value:'my-auth-token'}],
+    additionalParameter:{functitle:'1223',point:'sss'}
 
   });
 
