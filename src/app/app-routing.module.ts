@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'rootapp', component: RootAppComponent ,children:[
+    { path: '', component: IndexmoduleComponent },
     { path: 'heroes', component: Fileuploaddemo1Component },
     { path: 'indexmodule', component: IndexmoduleComponent },
     { path: 'discussmodule', component: DiscussmoduleComponent },
