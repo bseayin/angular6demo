@@ -22,31 +22,39 @@ import { TeamwikiComponent } from './teamwiki/teamwiki.component';
 import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
 import { PersonalsettingComponent } from './personalsetting/personalsetting.component';
 import { JqxchartdemoComponent } from './jqxchartdemo/jqxchartdemo.component';
+import { LoginComponent } from './login/login.component';
+import { RootAppComponent } from './root-app/root-app.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
-  { path: '', redirectTo: '/heroes', pathMatch: 'full' },
-  { path: 'heroes', component: IndexmoduleComponent },
-  { path: 'indexmodule', component: IndexmoduleComponent },
-  { path: 'discussmodule', component: DiscussmoduleComponent },
-  { path: 'wikimodule', component: WikimoduleComponent,children:[
-    { path: '', component: TeamwikiComponent },
-    { path: 'teamwiki', component: TeamwikiComponent },
-    { path: 'personalwiki', component: PersonalwikiComponent }
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'rootapp', component: RootAppComponent ,children:[
+    { path: 'heroes', component: Fileuploaddemo1Component },
+    { path: 'indexmodule', component: IndexmoduleComponent },
+    { path: 'discussmodule', component: DiscussmoduleComponent },
+    { path: 'wikimodule', component: WikimoduleComponent,children:[
+      { path: '', component: TeamwikiComponent },
+      { path: 'teamwiki', component: TeamwikiComponent },
+      { path: 'personalwiki', component: PersonalwikiComponent }
+    ]},
+    { path: 'funcdocmg', component: FuncdocmgComponent }, 
+    { path: 'task', component:TaskComponent,children:[
+        {path: 'tasklist',component: TasklistComponent},
+        {path: '',component: TasklistComponent},
+    ]} ,
+    { path: 'setingmodule', component: SetingmoduleComponent,children:[
+      { path: '', component: BasicsetComponent },
+      { path: 'basicset', component: BasicsetComponent },
+      { path: 'projectmg', component: ProjectmgComponent },
+      { path: 'teamfilesset', component: TeamfilesComponent },
+      { path: 'memberset', component: MembermgComponent },
+      { path: 'personsetting', component: PersonalsettingComponent }
+    ] },
+    { path: 'dashboard', component: CarouselComponent }
+
+
   ]},
-  { path: 'funcdocmg', component: FuncdocmgComponent }, 
-  { path: 'task', component:TaskComponent,children:[
-      {path: 'tasklist',component: TasklistComponent},
-      {path: '',component: TasklistComponent},
-  ]} ,
-  { path: 'setingmodule', component: SetingmoduleComponent,children:[
-    { path: '', component: BasicsetComponent },
-    { path: 'basicset', component: BasicsetComponent },
-    { path: 'projectmg', component: ProjectmgComponent },
-    { path: 'teamfilesset', component: TeamfilesComponent },
-    { path: 'memberset', component: MembermgComponent },
-    { path: 'personsetting', component: PersonalsettingComponent }
-  ] },
-  { path: 'dashboard', component: CarouselComponent }
+  
 ];
 
 @NgModule({

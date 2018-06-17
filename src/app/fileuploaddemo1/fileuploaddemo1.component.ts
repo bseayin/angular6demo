@@ -10,7 +10,9 @@ export class Fileuploaddemo1Component implements OnInit {
   private uploader: FileUploader = new FileUploader({
     url: '/codebuilder/uploadClient',
     method: 'POST',
-    itemAlias: 'file'
+    itemAlias: 'file',
+    headers:[{name:'Authorization',value:'my-auth-token'}]
+
   });
 
   constructor() { }
