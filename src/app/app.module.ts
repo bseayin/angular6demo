@@ -38,6 +38,8 @@ import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
 import { PersonalsettingComponent } from './personalsetting/personalsetting.component';
 import { JqxchartdemoComponent } from './jqxchartdemo/jqxchartdemo.component';
 import {NgxEchartsModule} from 'ngx-echarts';
+import { LoginComponent } from './login/login.component';
+import { RootAppComponent } from './root-app/root-app.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import {NgxEchartsModule} from 'ngx-echarts';
     TeamwikiComponent,
     PersonalwikiComponent,
     PersonalsettingComponent,
-    JqxchartdemoComponent
+    JqxchartdemoComponent,
+    LoginComponent,
+    RootAppComponent
  
   ],
   imports: [
