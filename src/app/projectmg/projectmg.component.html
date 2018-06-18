@@ -19,7 +19,7 @@
        <tr *ngFor="let funcpoint of funcpoints; index as i;" class="danger">
         <th scope="row">{{funcpoint.title}}</th>
         <td>{{funcpoint.priority}}</td>
-        <td>{{funcpoint.personNumber}}</td>
+        <td>{{funcpoint.interval}}</td>
         <td><input type="button" class="btn btn-info" value="修改">&nbsp;&nbsp;&nbsp;
           <button type="button" class="btn btn-info" data-toggle="modal" (click)="sendtitle(funcpoint)" data-target="#exampleModal">
             发布
