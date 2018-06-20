@@ -18,6 +18,8 @@ This project was generated with [Angular CLI]  version 6.0.1+bootstrap4
  ### <br>10. httpClient 获取json数据 example
  ### <br>11. 注入服务  example
 
+
+
  ##  启动项目需要运行的命令
  ### git clone 
  ### npm install 
@@ -28,7 +30,7 @@ This project was generated with [Angular CLI]  version 6.0.1+bootstrap4
   ### npm install echarts --save
   ### npm install ngx-echarts --save
   ### npm install @types/echarts 
- 
+  ### 前端部署包 https://pan.baidu.com/s/1P2CkrNfV9fRgtHZ692j9FQ
  ##  知识点
    脑图地址： http://naotu.baidu.com/file/3fc4186932118195edf5532f7e873799?token=55ced4d4d2f377ea
    ![maze](https://github.com/bseayin/angular6demo/raw/master/img/angular6.png)
