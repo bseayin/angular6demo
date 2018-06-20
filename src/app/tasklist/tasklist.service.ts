@@ -10,7 +10,7 @@ import { Task } from './task'
 import { HttpErrorHandlerService, HandleError } from '../http-error-handler.service';
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
+    'Content-Type':  'application/json;charset=UTF-8',
     'Authorization': 'my-auth-token'
   })
 };
@@ -20,6 +20,7 @@ const httpOptions = {
 })
 export class TasklistService {
   TaskUrl = 'codebuilder/getAllTask';  // URL to web api
+  addtaskUrl = 'codebuilder/addtaskzw';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -53,13 +54,12 @@ export class TasklistService {
   //////// Save methods //////////
 
   /** POST: add a new FuncPoint to the database */
-  addFuncPoint (Task: Task): Observable<Task> {
-    return this.http.post<Task>(this.TaskUrl, Task, httpOptions)
+  addtask (Task: Task): Observable<Task> {
+    return this.http.post<Task>(this.addtaskUrl, Task, httpOptions)
       .pipe(
-        catchError(this.handleError('addFuncPoint', Task))
+        catchError(this.handleError('addtask', Task))
       );
   }
-
   /** DELETE: delete the FuncPoint from the server */
   deleteFuncPoint (id: number): Observable<{}> {
     const url = `${this.TaskUrl}/${id}`; // DELETE api/FuncPointes/42
