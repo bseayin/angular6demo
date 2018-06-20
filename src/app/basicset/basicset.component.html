@@ -1,5 +1,17 @@
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">创建项目</button>
 
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">项目名称
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2" style="margin-left: 900px">创建项目</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects;index as i">
+      <td>{{project.title}}</td>
+    </tr>
+  </tbody>
+</table>
 
   <!-- 添加的模态框 -->
   <div class="modal fade" id="myModal2" aria-hidden="true">

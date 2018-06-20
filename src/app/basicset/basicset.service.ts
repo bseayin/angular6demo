@@ -19,6 +19,7 @@ const httpOptions = {
 })
 export class BasicsetService {
   addprojectUrl='codebuilder/createProjectDJW';  // URL to web api
+  showProjectUrl='codebuilder/showprojectzw';  // URL to web api'
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -33,5 +34,12 @@ export class BasicsetService {
           catchError(this.handleError('addproject'))
         );
     }
-    
+      /** GET SprintPlanes from the server */
+  getProject (): Observable<Project[]> {
+    console.log("asd");
+    return this.http.get<Project[]>(this.showProjectUrl)
+      .pipe(
+        catchError(this.handleError('getProject', []))
+      );
+  }
 }
