@@ -9,9 +9,15 @@ import { BasicsetService } from './basicset.service';
 export class BasicsetComponent implements OnInit {
   private pp:Project
   private adders:String
+  projects: Project[];
   constructor(private BasicsetService: BasicsetService) { }
 
   ngOnInit() {
+    this.getProject();
+  }
+  getProject(): void {
+    this.BasicsetService.getProject()
+      .subscribe(projects => this.projects = projects);
   }
   add(projectname): void {
     projectname= projectname.trim();
