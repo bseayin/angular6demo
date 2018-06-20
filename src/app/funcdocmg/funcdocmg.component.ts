@@ -10,17 +10,20 @@ import * as $ from 'jquery'
 
 export class FuncdocmgComponent implements OnInit {
   private funcpoints:Array<funcpoint>;
-  private fileuploadoption:FileUploaderOptions;
   private uploader1: FileUploader = new FileUploader({
     url: '/codebuilder/uploadClient',
     method: 'POST',
-    itemAlias: 'file'
+    itemAlias: 'file',
+    additionalParameter:{functitle:'1223',point:'sss'}
+
   });
   constructor() { }
   isUpdateTR=1;
 
 
   ngOnInit() {
+    var a=$("#functitle").text();
+    var b=$("#point").val();
     this.funcpoints=[
       new funcpoint("一","功能点1","已编辑"),
       new funcpoint("一","功能点2","未编辑"),
@@ -47,23 +50,19 @@ export class FuncdocmgComponent implements OnInit {
     
     var a=$("#functitle").text();
     var b=$("#point").val();
-    this.fileuploadoption.additionalParameter={
-      ["functitle"]:a,
-      ["point"]:b
-    };
 // onSuccessItem(item: FileItem, response: string, status: number, headers: ParsedResponseHeaders): any;
 this.uploader1.queue[0].upload(); // 开始上传
 // this.uploader.queue[0].onSuccess()
 alert('上传之后');
-        var a=$(this).attr("id");
-        var imgFile = document.getElementById(a+'uploadbtn')[0].files[0];
-        var fr = new FileReader();
-        fr.onload = function() {
-          document.getElementById('preview').getElementsByTagName('img')[0].src = fr.result;
-          document.getElementById('preview').getElementsByTagName('img')[1].src = fr.result;
-          document.getElementById(a)[0].src=fr.result;
-        };
-        fr.readAsDataURL(imgFile);
+        // var a=$(this).attr("id");
+        // var imgFile = document.getElementById(a+'uploadbtn')[0].files[0];
+        // var fr = new FileReader();
+        // fr.onload = function() {
+        //   document.getElementById('preview').getElementsByTagName('img')[0].src = fr.result;
+        //   document.getElementById('preview').getElementsByTagName('img')[1].src = fr.result;
+        //   document.getElementById(a)[0].src=fr.result;
+        // };
+        // fr.readAsDataURL(imgFile);
   }
   selectedFileOnChanged(event: any) {
     // 这里是文件选择完成后的操作处理
