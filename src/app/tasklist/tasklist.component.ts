@@ -9,7 +9,7 @@ import * as $ from 'jquery'
 })
 export class TasklistComponent implements OnInit {
   tasks: Task[];
-private tasklist:Array<task>;
+private tasklist:Array<Task>;
 private taskcontent:string;
 private showFlag=false;
 public temptask:Task;
@@ -39,37 +39,30 @@ public temptask:Task;
       this.showFlag=!this.showFlag;
 
     }
-  add(){
-    this.temptask.title=$("#title").val();
-    this.temptask.demand=$("#demand").val();
-    this.temptask.pId=$("#pId").val();
-    this.temptask.uId=$("#uId").val();
-    this.temptask.startTime=$("#startTime").val();
-    this.temptask.endTime=$("#endTime").val();
-    this.tasklistService.addtask(this.temptask)
-      .subscribe(adders => {
-        alert("添加成功!");
-        this.getgetTasks();
-        $('#addfrom')[0].reset();   
+    add(title: String,demand:String,pId:number,uId:number,startTime:Date,endTime:Date): void {
+      this.tasklistService.addtask2(title,demand,pId,uId,startTime,endTime)
+        .subscribe(adders => {
+          alert("添加成功!");
+          this.getgetTasks();
+          $('#addfrom')[0].reset();   
+          
+        });
+    }
+  // add(){
+  //   this.temptask.title=$("#title").val();
+  //   this.temptask.demand=$("#demand").val();
+  //   this.temptask.pId=$("#pId").val();
+  //   this.temptask.uId=$("#uId").val();
+  //   this.temptask.startTime=$("#startTime").val();
+  //   this.temptask.endTime=$("#endTime").val();
+  //   this.tasklistService.addtask(this.temptask)
+  //     .subscribe(adders => {
+  //       alert("添加成功!");
+  //       this.getgetTasks();
+  //       $('#addfrom')[0].reset();   
         
-      });
-  }
+  //     });
+  // }
     
 }
 
-export class task{
-  constructor(
-    public id:number,
-    public title:String,
-    public demand:String,
-    public start_time: String,
-    public end_time: String,
-    public status:String,
-    public p_id:number,
-    public p_leader:String,
-    public f_id:number,
-    public u_id:number,
-    public p_leader_id:number
-  ) { }
-
-}

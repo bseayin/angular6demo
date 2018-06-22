@@ -20,7 +20,7 @@ const httpOptions = {
 })
 export class TasklistService {
   TaskUrl = 'codebuilder/getAllTask';  // URL to web api
-  addtaskUrl = 'codebuilder/addtaskzw';  // URL to web api
+  addtaskUrl = 'codebuilder/addtaskzw2';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
@@ -58,6 +58,13 @@ export class TasklistService {
     return this.http.post<Task>(this.addtaskUrl, Task, httpOptions)
       .pipe(
         catchError(this.handleError('addtask', Task))
+      );
+  }
+  addtask2(title: String,demand:String,pId:number,uId:number,startTime:Date,endTime:Date): Observable<Task> {
+    const url = `${this.addtaskUrl}/${title}/${demand}/${pId}/${uId}/${startTime}/${endTime}`; // DELETE api/SprintPlanes/42
+    return this.http.post<Task>(url, httpOptions)
+      .pipe(
+        catchError(this.handleError('addtask2'))
       );
   }
   /** DELETE: delete the FuncPoint from the server */
