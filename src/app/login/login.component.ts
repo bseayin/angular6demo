@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,8 +13,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(){
+  login(): void{
+    var name=$("#email").val();
+    var pwd=$("pwd").val();
     this.router.navigate(['rootapp']);
+
+  };
   }
 
-}
+
