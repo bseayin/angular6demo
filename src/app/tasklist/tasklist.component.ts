@@ -11,8 +11,10 @@ export class TasklistComponent implements OnInit {
   tasks: Task[];
 private tasklist:Array<Task>;
 private taskcontent:string;
+private adders:string;
 private showFlag=false;
 public temptask:Task;
+
   constructor(private tasklistService: TasklistService) { }
 
   ngOnInit() {
