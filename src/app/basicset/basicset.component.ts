@@ -24,6 +24,8 @@ export class BasicsetComponent implements OnInit {
     this.BasicsetService.addProject(projectname)
       .subscribe(adders => {
         alert("创建成功!");
+        const newpro: Project ={ title: projectname} as Project;
+        this.projects.push(newpro);
         // $('#addfrom')[0].reset();   
       });
 }}
