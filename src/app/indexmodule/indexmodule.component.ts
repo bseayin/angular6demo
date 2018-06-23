@@ -10,34 +10,24 @@ import {Statusdata} from './stautsdata';
 
 export class IndexmoduleComponent implements OnInit {
     public statusData:Statusdata;
+    mapIntance:any;
+    onMapInit(ev){//地图初始化
+        var thisFunc =this;
+        this.mapIntance = ev;
+     }
   constructor(private statusdataService:StatusdataService) { }
-
+ 
   ngOnInit() {
     this.statusdataService.getTasksByStatus().subscribe(Statusdata=>{
-     console.log(this.chartOption.series);
-  console.log(Statusdata);
-  console.log(Statusdata.jinxingzhong);
    this.chartOption.series[0].data=Statusdata.weikaishi;
-   console.log("--------this.chartOption----------");
-   console.log(this.chartOption);
-   console.log("--------series[0]----------");
-   console.log(this.chartOption.series[0]);
-   console.log("--------this.chartOption.series[0].data----------");
-   console.log(this.chartOption.series[0].data);
-   console.log("--------Statusdata.weikaishi----------");
-   console.log(Statusdata.weikaishi);
-   console.log("--------Statusdata----------");
-   console.log(Statusdata);
    this.chartOption.series[1].data=Statusdata.jinxingzhong;
    this.chartOption.series[2].data=Statusdata.yiwancheng;
    this.chartOption.series[3].data=Statusdata.yijieshu;
-
+   this.mapIntance.setOption(this.chartOption);//更新地图数据
     });
   
   }
 
-
-  
 
   chartOption = {
     title: {
