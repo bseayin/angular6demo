@@ -9,7 +9,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router,private Loginservice :LoginService) { }
+  constructor(private router:Router,private loginservice :LoginService) { }
 
   ngOnInit() {
   }
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     var pwd=$("#pwd").val();
     console.log(name);
     console.log(pwd);
-    this.Loginservice.login(name,pwd).subscribe(user =>{
+    this.loginservice.login(name,pwd).subscribe(user =>{
 if(user.rs=="Y"){
   this.router.navigate(['rootapp']);
 }else if(user.rs=="N"){
