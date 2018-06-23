@@ -4,7 +4,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { HttpErrorHandlerService, HandleError } from '../http-error-handler.service';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { User } from './user';
+import { User } from '.././login/user';
 import { registerLocaleData } from '@angular/common';
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,25 +15,18 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class RegisterService {
   private handleError: HandleError;
-  loginurl = 'codebuilder/login'; 
+ registerurl = 'codebuilder/register'; 
   constructor(private http: HttpClient,
-    httpErrorHandler: HttpErrorHandlerService) {this.handleError = httpErrorHandler.createHandleError('LoginService'); }
+    httpErrorHandler: HttpErrorHandlerService) { this.handleError = httpErrorHandler.createHandleError('RegisterService');}
 
-//登录
-login(name:String,pwd:String): Observable<User>{
-  const url=`${this.loginurl}/?name=${name}&&pwd=${pwd}`;
-  return this.http.post<User>(url,httpOptions)
-  .pipe(
-    catchError(this.handleError('login'))
-  );
-}
-
+    register(name:String,pwd:String): Observable<User>{
+      const url=`${this.registerurl}/?name=${name}&&pwd=${pwd}`;
+      return this.http.post<User>(url,httpOptions)
+      .pipe(
+        catchError(this.handleError('register'))
+      );
+    }
 
   }
-
-
-
-
-

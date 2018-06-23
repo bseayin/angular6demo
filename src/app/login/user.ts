@@ -3,5 +3,7 @@ export interface User {
     name: string;
     pwd:String;
     mail:string;
+    rs:String;
+    reason:String;
   
   }

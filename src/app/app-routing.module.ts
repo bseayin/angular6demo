@@ -23,11 +23,13 @@ import { PersonalwikiComponent } from './personalwiki/personalwiki.component';
 import { PersonalsettingComponent } from './personalsetting/personalsetting.component';
 import { JqxchartdemoComponent } from './jqxchartdemo/jqxchartdemo.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { RootAppComponent } from './root-app/root-app.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'rootapp', component: RootAppComponent ,children:[
     { path: '', component: IndexmoduleComponent },
     { path: 'heroes', component: Fileuploaddemo1Component },
