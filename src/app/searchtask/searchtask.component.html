@@ -1,3 +1,60 @@
-<p>
-  searchtask works!
-</p>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-light" role="tablist">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" class="btn btn-link" (click)="getTaskByStatus('未开始')">未开始</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" class="btn btn-link" (click)="getTaskByStatus('进行中')">进行中</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  class="btn btn-link" (click)="getTaskByStatus('已完成')">已完成</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" class="btn btn-link" (click)="getTaskByStatus('已结束')">已结束</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+</body>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">标题</th>
+        <th scope="col">内容</th>
+        <th scope="col">开始时间</th>
+        <th scope="col">结束时间</th>
+        <th scope="col">状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let task of tasks; index as i;" class="danger">
+        <td *ngIf="!showFlag">{{task.id}}</td>
+        <td *ngIf="!showFlag">{{task.title}}</td>
+        <td (click)="show(task.demand)">  <a href="#"  data-toggle="modal" data-target="#taskContentModal" >查看详情</a></td>
+        <td>{{task.startTime | date:'yyyy-MM-dd'}}</td>
+        <td>{{task.endTime | date:'yyyy-MM-dd'}}</td>
+        <td>{{task.status}}</td>
+
+
+              </tr>
+    </tbody>
+  </table>
+</div>
+</html>

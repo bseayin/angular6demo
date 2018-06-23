@@ -1,16 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'ngx-echarts';
+import {StatusdataService} from './indexmodule.service';
+import {Statusdata} from './stautsdata';
 @Component({
   selector: 'app-indexmodule',
   templateUrl: './indexmodule.component.html',
   styleUrls: ['./indexmodule.component.css']
 })
-export class IndexmoduleComponent implements OnInit {
 
-  constructor() { }
+export class IndexmoduleComponent implements OnInit {
+    public statusData:Statusdata;
+  constructor(private statusdataService:StatusdataService) { }
 
   ngOnInit() {
+    this.statusdataService.getTasksByStatus().subscribe(Statusdata=>{
+     console.log(this.chartOption.series);
+  console.log(Statusdata);
+  console.log(Statusdata.jinxingzhong);
+   this.chartOption.series[0].data=Statusdata.weikaishi;
+   console.log("--------this.chartOption----------");
+   console.log(this.chartOption);
+   console.log("--------series[0]----------");
+   console.log(this.chartOption.series[0]);
+   console.log("--------this.chartOption.series[0].data----------");
+   console.log(this.chartOption.series[0].data);
+   console.log("--------Statusdata.weikaishi----------");
+   console.log(Statusdata.weikaishi);
+   console.log("--------Statusdata----------");
+   console.log(Statusdata);
+   this.chartOption.series[1].data=Statusdata.jinxingzhong;
+   this.chartOption.series[2].data=Statusdata.yiwancheng;
+   this.chartOption.series[3].data=Statusdata.yijieshu;
+
+    });
+  
   }
+
+
+  
 
   chartOption = {
     title: {
@@ -51,7 +78,7 @@ export class IndexmoduleComponent implements OnInit {
             type: 'line',
             stack: '总量',
             areaStyle: {normal: {}},
-            data: [120, 132, 101, 134, 90, 230, 210]
+            data: [120, 132, 101, 134, 90, 230, 210],
         },
         {
             name: '进行中任务',
@@ -74,19 +101,6 @@ export class IndexmoduleComponent implements OnInit {
             areaStyle: {normal: {}},
             data: [320, 332, 301, 334, 390, 330, 320]
         },
-        {
-            name: '完成功能点数量',
-            type: 'line',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'top'
-                }
-            },
-            areaStyle: {normal: {}},
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-        }
     ]
 }
 

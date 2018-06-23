@@ -41,6 +41,7 @@ import {NgxEchartsModule} from 'ngx-echarts';
 import { LoginComponent } from './login/login.component';
 import { RootAppComponent } from './root-app/root-app.component';
 import { RegisterComponent } from './register/register.component';
+import { SearchtaskComponent } from './searchtask/searchtask.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { RegisterComponent } from './register/register.component';
     JqxchartdemoComponent,
     LoginComponent,
     RootAppComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchtaskComponent
  
   ],
   imports: [

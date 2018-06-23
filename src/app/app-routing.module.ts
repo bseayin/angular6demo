@@ -25,6 +25,7 @@ import { JqxchartdemoComponent } from './jqxchartdemo/jqxchartdemo.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RootAppComponent } from './root-app/root-app.component';
+import { SearchtaskComponent } from './searchtask/searchtask.component';
 const routes: Routes = [
   // 设置默认跳转路由， full表示与path为空的路由完全匹配
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -43,7 +44,7 @@ const routes: Routes = [
     { path: 'funcdocmg', component: FuncdocmgComponent }, 
     { path: 'task', component:TaskComponent,children:[
         {path: 'tasklist',component: TasklistComponent},
-        {path: '',component: TasklistComponent},
+        {path: 'searchtask',component: SearchtaskComponent},
     ]} ,
     { path: 'setingmodule', component: SetingmoduleComponent,children:[
       { path: '', component: BasicsetComponent },
