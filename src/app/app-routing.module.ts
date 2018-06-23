@@ -45,6 +45,7 @@ const routes: Routes = [
     { path: 'task', component:TaskComponent,children:[
         {path: 'tasklist',component: TasklistComponent},
         {path: 'searchtask',component: SearchtaskComponent},
+        { path: 'report', component: IndexmoduleComponent },
     ]} ,
     { path: 'setingmodule', component: SetingmoduleComponent,children:[
       { path: '', component: BasicsetComponent },
