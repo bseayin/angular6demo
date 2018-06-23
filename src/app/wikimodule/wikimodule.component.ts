@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WikimoduleComponent implements OnInit {
 
-  item1="nav-link "
+  item1="nav-link  "
   item2="nav-link "
   constructor() { }
 
@@ -17,10 +17,10 @@ export class WikimoduleComponent implements OnInit {
     this.item1="nav-link";
     this.item2="nav-link";
 if("A"==item){
-  this.item1="nav-link bg-info";
+  this.item1="nav-link active";
 }
 if("B"==item){
-  this.item2="nav-link bg-info";
+  this.item2="nav-link active";
 }
   }
 }
