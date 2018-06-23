@@ -20,8 +20,11 @@ message2:Message;
   }
 //根据用户获得当前用户的所有消息信息
   getMessage() : void{
+    this.messages = [];    
     this.PersonalsettingService.getAllMessages()
       .subscribe(messages =>{
+        console.log("--------getAllMessages----");
+        console.log(messages);
         this.messages = messages;
       }) 
   }
