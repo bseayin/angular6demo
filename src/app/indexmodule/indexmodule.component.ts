@@ -37,7 +37,7 @@ export class IndexmoduleComponent implements OnInit {
         trigger: 'axis'
     },
     legend: {
-        data: ['已完成任务', '进行中任务', '未开始任务', '完成功能点数量', '未成功能点数量']
+        data: ['未开始的任务', '进行中任务', '已完成任务', '已结束任务', ]
     },
     toolbox: {
         feature: {
@@ -64,7 +64,7 @@ export class IndexmoduleComponent implements OnInit {
     ],
     series : [
         {
-            name: '已完成任务',
+            name: '未开始任务',
             type: 'line',
             stack: '总量',
             areaStyle: {normal: {}},
@@ -78,14 +78,14 @@ export class IndexmoduleComponent implements OnInit {
             data: [220, 182, 191, 234, 290, 330, 310]
         },
         {
-            name: '未开始任务',
+            name: '已完成任务',
             type: 'line',
             stack: '总量',
             areaStyle: {normal: {}},
             data: [150, 232, 201, 154, 190, 330, 410]
         },
         {
-            name: '直接访问',
+            name: '已结束任务',
             type: 'line',
             stack: '总量',
             areaStyle: {normal: {}},
