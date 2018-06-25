@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as echarts from 'ngx-echarts';
 import {StatusdataService} from './indexmodule.service';
 import {Statusdata} from './stautsdata';
+import { Project } from './project' 
 @Component({
   selector: 'app-indexmodule',
   templateUrl: './indexmodule.component.html',
@@ -10,6 +11,7 @@ import {Statusdata} from './stautsdata';
 
 export class IndexmoduleComponent implements OnInit {
     public statusData:Statusdata;
+    UserProjects:Project[];
     mapIntance:any;
     onMapInit(ev){//地图初始化
         var thisFunc =this;
@@ -24,10 +26,14 @@ export class IndexmoduleComponent implements OnInit {
    this.chartOption.series[2].data=Statusdata.yiwancheng;
    this.chartOption.series[3].data=Statusdata.yijieshu;
    this.mapIntance.setOption(this.chartOption);//更新地图数据
+   this.getUserProjects();
     });
-  
+   
   }
-
+  getUserProjects(): void{
+    this.statusdataService.getUserProjects()
+    .subscribe(UserProjects => this.UserProjects = UserProjects);
+  }
 
   chartOption = {
     title: {

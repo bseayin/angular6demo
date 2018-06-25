@@ -5,7 +5,7 @@ import { Statusdata} from './stautsdata';
 import {IndexmoduleComponent} from './indexmodule.component';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
+import { Project } from './project' 
 import { HttpErrorHandlerService, HandleError } from '../http-error-handler.service';
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,6 +18,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class StatusdataService {
+  getUserProjectUrl='codebuilder/getUserProjectZW';
   TaskUrl = 'codebuilder/getAllTask';  // URL to web api
   addtaskUrl = 'codebuilder/addtaskzw2';  // URL to web api
   private handleError: HandleError;
@@ -37,6 +38,13 @@ export class StatusdataService {
       
 
   }
-
+    /** GET Wikies from the server */
+    getUserProjects (): Observable<Project[]> {
+      console.log("得到用户的所属项目");
+      return this.http.get<Project[]>(this.getUserProjectUrl)
+        .pipe(
+          catchError(this.handleError('getUserProjects', []))
+        );
+}
   
 }
