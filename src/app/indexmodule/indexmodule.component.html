@@ -1,4 +1,4 @@
 
 
-<select style="font-size: 20px" id="" ><option *ngFor="let UserProject of UserProjects;index as i">{{UserProject.name}}</option></select>
+<select style="font-size: 20px" id="sessionproject" (change)="sendsession()"><option *ngFor="let UserProject of UserProjects;index as i" >{{UserProject.name}}</option></select>
 <div echarts [options]="chartOption"  class="demo-chart"  (chartInit)="onMapInit($event)"></div>

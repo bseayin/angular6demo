@@ -19,6 +19,7 @@ const httpOptions = {
 })
 export class StatusdataService {
   getUserProjectUrl='codebuilder/getUserProjectZW';
+  sendProjectUrl='codebuilder/setprojectsessionZW';
   TaskUrl = 'codebuilder/getAllTask';  // URL to web api
   addtaskUrl = 'codebuilder/addtaskzw2';  // URL to web api
   private handleError: HandleError;
@@ -46,5 +47,11 @@ export class StatusdataService {
           catchError(this.handleError('getUserProjects', []))
         );
 }
-  
+    sendprojectsession(name: String): Observable<Project> {
+      const url = `${this.sendProjectUrl}/${name}`; // DELETE api/SprintPlanes/42
+      return this.http.post<Project>(url, httpOptions)
+        .pipe(
+          catchError(this.handleError('sendprojectsession'))
+        );
+    }
 }

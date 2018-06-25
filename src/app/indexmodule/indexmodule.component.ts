@@ -3,6 +3,7 @@ import * as echarts from 'ngx-echarts';
 import {StatusdataService} from './indexmodule.service';
 import {Statusdata} from './stautsdata';
 import { Project } from './project' 
+import * as $ from 'jquery'
 @Component({
   selector: 'app-indexmodule',
   templateUrl: './indexmodule.component.html',
@@ -12,6 +13,8 @@ import { Project } from './project'
 export class IndexmoduleComponent implements OnInit {
     public statusData:Statusdata;
     UserProjects:Project[];
+    private currentproject:String;
+    private changers:String;
     mapIntance:any;
     onMapInit(ev){//地图初始化
         var thisFunc =this;
@@ -34,7 +37,17 @@ export class IndexmoduleComponent implements OnInit {
     this.statusdataService.getUserProjects()
     .subscribe(UserProjects => this.UserProjects = UserProjects);
   }
-
+  sendsession(){
+      this.currentproject=$("#sessionproject").val();
+      this.add(this.currentproject);
+  }
+  add(name:String): void {
+    this.statusdataService.sendprojectsession(name)
+      .subscribe(changers => {
+        alert("切换团队成功!");
+        
+      });
+  }
   chartOption = {
     title: {
         text: '项目任务完成情况图'
