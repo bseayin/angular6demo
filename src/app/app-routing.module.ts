@@ -43,6 +43,7 @@ const routes: Routes = [
     ]},
     { path: 'funcdocmg', component: FuncdocmgComponent }, 
     { path: 'task', component:TaskComponent,children:[
+      { path: '', component: TasklistComponent },
         {path: 'tasklist',component: TasklistComponent},
         {path: 'searchtask',component: SearchtaskComponent},
         { path: 'report', component: IndexmoduleComponent },
