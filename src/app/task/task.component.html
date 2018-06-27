@@ -9,6 +9,65 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" routerLink="./report">任务报表</a>
     </li>
+    <li><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">添加任务</button></li>
   </ul>
-
+  
 <router-outlet></router-outlet>
+
+<div class="modal fade" id="myModal2">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">添加</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>     
+      <!-- 模态框主体 -->
+      <div class="modal-body">
+        <form id="addfrom">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">任务标题</label>
+              <input type="email" class="form-control" id="title" placeholder="任务标题" #title>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">功能点ID</label>
+                <input type="email" class="form-control" id="pId" placeholder="功能点ID" #pId>
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                 <label for="inputEmail4">指派给</label>
+                 <select id="uId" class="form-control" #uId>
+                   <option>1</option>
+                   <option>2</option>
+                   <option>3</option>
+                 </select>
+               </div> 
+            </div>
+         <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">开始时间</label>
+              <input type="date" class="form-control" id="startTime" placeholder="" #startTime>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">结束时间</label>
+              <input type="date" class="form-control" id="endTime" placeholder="" #endTime>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="inputPassword4">任务需求</label>
+                <textarea class="form-control" id="demand" rows="3" style="height: 400px;width: 765px;resize: none;" #demand></textarea>
+              </div>    
+                  
+          </div>
+         
+        </form>
+      </div>    
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-info" (click)="add(title.value,demand.value,pId.value,uId.value,startTime.value,endTime.value)">添加</button>
+       <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div> 
