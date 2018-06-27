@@ -15,6 +15,7 @@ export class IndexmoduleComponent implements OnInit {
     UserProjects:Project[];
     private currentproject:String;
     private changers:String;
+    currentsession:Project;
     mapIntance:any;
     onMapInit(ev){//地图初始化
         var thisFunc =this;
@@ -39,7 +40,7 @@ export class IndexmoduleComponent implements OnInit {
   }
   sendsession(){
       this.currentproject=$("#sessionproject").val();
-      this.add(this.currentproject);
+      this.add(this.currentproject,);
   }
   add(name:String): void {
     this.statusdataService.sendprojectsession(name)
