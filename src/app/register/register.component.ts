@@ -26,4 +26,7 @@ register() :void{
       }
           })
 }
+gologin() :void{
+  this.router.navigate(['login']);
+}
 }
