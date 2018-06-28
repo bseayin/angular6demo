@@ -19,7 +19,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class MemberlistService {
-  MemberUrl = 'codebuilder/getAllMember';  // URL to web api
+  MemberUrl = 'codebuilder/getMemberZW';  // URL to web api
   private handleError: HandleError;
   constructor(
     private http: HttpClient,
