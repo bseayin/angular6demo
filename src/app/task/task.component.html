@@ -39,9 +39,7 @@
               <div class="form-group col-md-6">
                  <label for="inputEmail4">指派给</label>
                  <select id="uId" class="form-control" #uId>
-                   <option>1</option>
-                   <option>2</option>
-                   <option>3</option>
+                  <option *ngFor="let CurrentTeam of CurrentTeams;index as i" >{{CurrentTeam.uId}}</option>
                  </select>
                </div> 
             </div>
